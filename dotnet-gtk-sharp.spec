@@ -3,7 +3,7 @@ Summary:	.NET language bindings for Gtk+ and GNOME
 Summary(pl):	Wi±zania Gtk+ oraz GNOME dla .NET
 Name:		gtk-sharp
 Version:	0.16
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
@@ -35,7 +35,7 @@ GNOME2.
 %package devel
 Summary:	Development part of GTK#
 Group:		Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description devel
 Tools (C source parser and C# code generator) and documentation for
@@ -49,7 +49,7 @@ potrzebne przy tworzeniu aplikacji korzystaj±cych z GTK#.
 Summary:	Static gtk-sharp libraries
 Summary(pl):	Biblioteki statyczne gtk-sharp
 Group:		Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 Static gtk-sharp libraries.
