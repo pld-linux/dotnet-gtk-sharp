@@ -7,6 +7,7 @@ Release:	2
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://dl.sourceforge.net/gtk-sharp/%{name}-%{version}.tar.gz
+# Source0-md5:	0f796f788159b008ee8a7f656dedf363
 URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
