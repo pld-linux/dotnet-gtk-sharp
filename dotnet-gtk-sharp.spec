@@ -19,8 +19,7 @@ Source0:	http://www.go-mono.com/archive/%{version}/gtk-sharp-%{version}.tar.gz
 Patch0:		%{name}-gtkhtml31.patch
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
-#Patch3:		%{name}-disable-rsvg-sample.patch
-Patch4:		%{name}-pc-libdir.patch
+Patch3:		%{name}-pc-libdir.patch
 URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -98,8 +97,7 @@ Biblioteki statyczne gtk-sharp.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
-#%patch3 -p1
-%patch4 -p1
+%patch3 -p1
 
 # workaround for variable name
 echo 'm4_pattern_allow(PKG_PATH)' > acinclude.m4
