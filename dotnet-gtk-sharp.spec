@@ -1,18 +1,20 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	.NET language bindings for Gtk+ and GNOME
 Summary(pl):	Wi±zania Gtk+ oraz GNOME dla .NET
-Name:		dotnet-gtk
-Version:	0.91.1
-Release:	2
+Name:		dotnet-gtk-sharp
+Version:	0.93
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
 #Source0:	http://belnet.dl.sourceforge.net/gtk-sharp/gtk-sharp-%{version}.tar.gz
 Source0:	http://www.go-mono.com/archive/beta1/gtk-sharp-%{version}.tar.gz
-# Source0-md5:	5e4537398dba1e88886f9c0193df4602
+# Source0-md5:	b8a1a3a0fc75142fd3867976cd9254c1
 Patch0:		%{name}-gtkhtml31.patch
 URL:		http://gtk-sharp.sf.net/
 Obsoletes:	gtk-sharp
+Obsoletes:	dotnet-gtk
 Provides:	gtk-sharp
+Provides:	dotnet-gtk
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtkhtml-devel >= 3.1.14
@@ -24,7 +26,7 @@ BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	mono-csharp
-BuildRequires:	mono-devel >= 0.91
+BuildRequires:	mono-devel >= 0.95
 BuildRequires:	ncurses-devel
 BuildRequires:	rpm-perlprov
 BuildRequires:	vte-devel >= 0.11.10
@@ -90,7 +92,7 @@ install -d $RPM_BUILD_ROOT{%{perl_vendorlib},%{_examplesdir}/%{name}-%{version}}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-mv -f $RPM_BUILD_ROOT%{_datadir}/perl5/GAPI $RPM_BUILD_ROOT%{perl_vendorlib}
+#mv -f $RPM_BUILD_ROOT%{_datadir}/perl5/GAPI $RPM_BUILD_ROOT%{perl_vendorlib}
 cp -a sample/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
@@ -112,7 +114,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.generator ChangeLog
 %attr(755,root,root) %{_bindir}/gapi*
 %{_datadir}/gapi
-%{perl_vendorlib}/GAPI
+#%{perl_vendorlib}/GAPI
 %{_examplesdir}/%{name}-%{version}
 %{_pkgconfigdir}/*
 %{_libdir}/mono/gtk-sharp
