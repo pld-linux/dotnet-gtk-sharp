@@ -1,6 +1,6 @@
-diff -urN gtk-sharp-0.98.orig/configure.in gtk-sharp-0.98/configure.in
---- gtk-sharp-0.98.orig/configure.in	2004-06-20 12:44:16.977015568 +0200
-+++ gtk-sharp-0.98/configure.in	2004-06-20 12:50:28.532530544 +0200
+diff -Nuard gtk-sharp-1.0.orig/configure.in gtk-sharp-1.0/configure.in
+--- gtk-sharp-1.0.orig/configure.in	2004-06-29 18:02:15.000000000 +0200
++++ gtk-sharp-1.0/configure.in	2004-06-30 23:45:46.724677928 +0200
 @@ -62,6 +62,7 @@
  
  MONO_REQUIRED_VERSION=0.96
@@ -9,7 +9,7 @@ diff -urN gtk-sharp-0.98.orig/configure.in gtk-sharp-0.98/configure.in
  
  if test "x$has_mono" = "xtrue"; then
  GACUTIL_FLAGS='/package $(PACKAGE) /gacdir $(libdir)'
-@@ -76,17 +77,22 @@
+@@ -76,17 +77,24 @@
  	LIB_SUFFIX=
  fi
  else
@@ -26,6 +26,8 @@ diff -urN gtk-sharp-0.98.orig/configure.in gtk-sharp-0.98/configure.in
 -fi
 +dnl use mint if mono is not found                                                                                               
 +    if test "x$has_mint" = "xtrue"; then                                                                                        
++       GACUTIL_FLAGS='/package $(PACKAGE) /root $(DESTDIR)$(libdir)'
++       GENERATED_SOURCES=generated/*.cs
 +       AC_PATH_PROG(RUNTIME, mint, no)                                                                                          
 +       AC_PATH_PROG(CSC, mcs, no)                                                                                               
 +       LIB_PREFIX=                                                                                                              
