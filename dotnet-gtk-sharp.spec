@@ -3,7 +3,7 @@ Summary:	.NET language bindings for Gtk+ and GNOME
 Summary(pl):	Wi±zania Gtk+ oraz GNOME dla .NET
 Name:		gtk-sharp
 Version:	0.8
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://dl.sourceforge.net/gtk-sharp/%{name}-%{version}.tar.gz
@@ -56,8 +56,8 @@ potrzebne przy tworzeniu aplikacji korzystaj±cych z GTK#.
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{perl_sitelib}
-mv -f $RPM_BUILD_ROOT%{_datadir}/perl5/* $RPM_BUILD_ROOT%{perl_sitelib}
+install -d $RPM_BUILD_ROOT%{perl_vendorlib}
+mv -f $RPM_BUILD_ROOT%{_datadir}/perl5/GAPI $RPM_BUILD_ROOT%{perl_vendorlib}
 
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -a sample/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
@@ -82,5 +82,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gapi*
 %{_libdir}/libgtksharpglue.a
 %{_datadir}/gapi
-%{perl_sitelib}/GAPI
+%{perl_vendorlib}/GAPI
 %{_examplesdir}/%{name}-%{version}
