@@ -2,12 +2,12 @@
 Summary:	.NET language bindings for Gtk+ and GNOME
 Summary(pl):	Wi±zania Gtk+ oraz GNOME dla .NET
 Name:		gtk-sharp
-Version:	0.17
-Release:	3
+Version:	0.18
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://belnet.dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	eef5e8acc6bafad869be2c1403c39d62
+# Source0-md5:	aa85960a335801c813b522bbc8438b2c
 Patch0:		%{name}-gtkhtml31.patch
 URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
@@ -93,8 +93,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/gconfsharp-schemagen*
-%attr(755,root,root) %{_libdir}/libgtksharpglue.so
-%{_libdir}/libgtksharpglue.la
+%attr(755,root,root) %{_libdir}/lib*sharpglue.so
+%{_libdir}/lib*sharpglue.la
 %{_libdir}/*.dll
 
 %files devel
@@ -108,4 +108,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/libgtksharpglue.a
+%{_libdir}/lib*sharpglue.a
