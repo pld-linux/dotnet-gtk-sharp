@@ -1,9 +1,11 @@
+%define		gtkhtml_soversion	%(/bin/ls /usr/lib/libgtkhtml-3.1.so.* | /usr/bin/head -1 | /usr/bin/awk '{ split($1,v,"."); print v[4]; }')
+%define		gtkhtml_version		%(/usr/bin/pkg-config --modversion libgtkhtml-3.1)
 %include	/usr/lib/rpm/macros.perl
 Summary:	.NET language bindings for Gtk+ and GNOME
 Summary(pl):	Wi±zania Gtk+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
 Version:	1.0
-Release:	5
+Release:	6
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://www.go-mono.com/archive/%{version}/gtk-sharp-%{version}.tar.gz
@@ -32,11 +34,15 @@ BuildRequires:	mono-devel >= 1.0-3
 BuildRequires:	ncurses-devel
 BuildRequires:	rpm-perlprov
 BuildRequires:	vte-devel >= 0.11.10
+BuildRequires:	gawk
+Requires:	gtkhtml = %{gtkhtml_version}
 Provides:	dotnet-gtk
 Provides:	gtk-sharp
 Obsoletes:	dotnet-gtk
 Obsoletes:	gtk-sharp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+
 
 %description
 This package provides bindings for .NET to Gtk+2 and GNOME2 libraries.
@@ -94,7 +100,10 @@ rm -rf autom4te.cache
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure
+
+%configure \
+	GTKHTMLSOVERSION=%{gtkhtml_soversion}
+    
 %{__make}
 
 %install
