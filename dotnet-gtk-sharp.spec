@@ -12,25 +12,28 @@ Patch0:		%{name}-gtkhtml31.patch
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
 URL:		http://gtk-sharp.sf.net/
-Obsoletes:	gtk-sharp
-Obsoletes:	dotnet-gtk
-Provides:	gtk-sharp
-Provides:	dotnet-gtk
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtkhtml-devel >= 3.1.14
+BuildRequires:	libart_lgpl-devel >= 2.2.0
 BuildRequires:	libgda-devel >= 1.0.0
 BuildRequires:	libglade2-devel >= 2.0.1
 BuildRequires:	libgnomecanvas-devel >= 2.4.0
 BuildRequires:	libgnomedb-devel >= 1.0.0
+BuildRequires:	libgnomeprintui-devel >= 2.4.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
+BuildRequires:	libxml2-devel
 BuildRequires:	mono-csharp
 BuildRequires:	mono-devel >= 0.96
 BuildRequires:	ncurses-devel
 BuildRequires:	rpm-perlprov
 BuildRequires:	vte-devel >= 0.11.10
+Provides:	dotnet-gtk
+Provides:	gtk-sharp
+Obsoletes:	dotnet-gtk
+Obsoletes:	gtk-sharp
 ExcludeArch:	amd64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -45,11 +48,11 @@ GNOME2.
 Summary:	Development part of GTK#
 Summary(pl):	Czê¶æ dla programistów GTK#
 Group:		Development/Libraries
-Obsoletes:	gtk-sharp-devel
-Obsoletes:	dotnet-gtk-devel
-Provides:	gtk-sharp-devel
-Provides:	dotnet-gtk-devel
 Requires:	%{name} = %{version}-%{release}
+Provides:	dotnet-gtk-devel
+Provides:	gtk-sharp-devel
+Obsoletes:	dotnet-gtk-devel
+Obsoletes:	gtk-sharp-devel
 
 %description devel
 Tools (C source parser and C# code generator) and documentation for
@@ -63,11 +66,11 @@ potrzebne przy tworzeniu aplikacji korzystaj±cych z GTK#.
 Summary:	Static gtk-sharp libraries
 Summary(pl):	Biblioteki statyczne gtk-sharp
 Group:		Development/Libraries
-Obsoletes:	gtk-sharp-static
-Obsoletes:	dotnet-gtk-static
-Provides:	gtk-sharp-static
-Provides:	dotnet-gtk-static
 Requires:	%{name}-devel = %{version}-%{release}
+Provides:	dotnet-gtk-static
+Provides:	gtk-sharp-static
+Obsoletes:	dotnet-gtk-static
+Obsoletes:	gtk-sharp-static
 
 %description static
 Static gtk-sharp libraries.
