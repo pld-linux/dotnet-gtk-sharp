@@ -1,11 +1,11 @@
-%define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.1.so.* | /usr/bin/head -n 1 | /usr/bin/awk '{ split($1,v,"."); print v[4]; }')
-%define		gtkhtml_version		%(if [ -e /usr/bin/pkg-config ]; then /usr/bin/pkg-config --modversion libgtkhtml-3.1; else echo 0; fi)
+%define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.6.so.* | /usr/bin/head -n 1 | /usr/bin/awk '{ split($1,v,"."); print v[4]; }')
+%define		gtkhtml_version		%(if [ -e /usr/bin/pkg-config ]; then /usr/bin/pkg-config --modversion libgtkhtml-3.6; else echo 0; fi)
 %include	/usr/lib/rpm/macros.perl
 Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
 Version:	1.0.6
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://www.go-mono.com/archive/%{version}/gtk-sharp-%{version}.tar.gz
@@ -19,7 +19,7 @@ URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gawk
-BuildRequires:	gtkhtml-devel >= 3.2.4
+BuildRequires:	gtkhtml-devel >= 3.6.0
 BuildRequires:	libart_lgpl-devel >= 2.2.0
 BuildRequires:	libgda-devel >= 1.0.0
 BuildRequires:	libglade2-devel >= 2.0.1
