@@ -1,5 +1,5 @@
 %define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.1.so.* | /usr/bin/head -1 | /usr/bin/awk '{ split($1,v,"."); print v[4]; }')
-%define		gtkhtml_version		%(/usr/bin/pkg-config --modversion libgtkhtml-3.1)
+%define		gtkhtml_version		%(if [ -e /usr/bin/pkg-config ]; then /usr/bin/pkg-config --modversion libgtkhtml-3.1 ; fi)
 %include	/usr/lib/rpm/macros.perl
 Summary:	.NET language bindings for Gtk+ and GNOME
 Summary(pl):	Wi±zania Gtk+ oraz GNOME dla .NET
@@ -18,6 +18,7 @@ Patch4:		%{name}-pc-libdir.patch
 URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
+BuildRequires:	pkgconfig
 BuildRequires:	gtkhtml-devel >= 3.1.14
 BuildRequires:	libart_lgpl-devel >= 2.2.0
 BuildRequires:	libgda-devel >= 1.0.0
