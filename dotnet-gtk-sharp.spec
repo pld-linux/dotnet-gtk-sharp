@@ -31,6 +31,7 @@ BuildRequires:	mono-devel >= 0.95
 BuildRequires:	ncurses-devel
 BuildRequires:	rpm-perlprov
 BuildRequires:	vte-devel >= 0.11.10
+ExcludeArch:	amd64
 # temporary, there is cyclic dependence between this package version
 # and monodoc version
 BuildConflicts:	monodoc
