@@ -8,7 +8,7 @@ diff -urN aa/gtk-sharp-0.16/configure.in gtk-sharp-0.16/configure.in
 +PKG_CHECK_MODULES(GTKHTML_DEPENDENCIES, libgtkhtml-3.1 >= $GTKHTML_REQUIRED_VERSION, enable_gtkhtml31=yes, enable_gtkhtml31=no)
 +if test "x$enable_gtkhtml31" = "xyes"; then
 +	enable_gtkhtml=yes
-+	for i in gtkhtml/gtkhtml-api.xml sources/gtk-sharp-sources.xml; do
++	for i in gtkhtml/gtkhtml-api.raw sources/gtk-sharp-sources.xml; do
 +		sed -e 's/"gtkhtml-3.0"/"gtkhtml-3.1"/' $i > gtkhtml-tmp
 +		mv -f gtkhtml-tmp $i
 +	done
