@@ -2,15 +2,15 @@
 Summary:	.NET language bindings for Gtk+ and GNOME
 Summary(pl):	Wi±zania Gtk+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
-Version:	0.93
-Release:	2
+Version:	0.98
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
-#Source0:	http://belnet.dl.sourceforge.net/gtk-sharp/gtk-sharp-%{version}.tar.gz
-Source0:	http://www.go-mono.com/archive/beta2/gtk-sharp-%{version}.tar.gz
-# Source0-md5:	b8a1a3a0fc75142fd3867976cd9254c1
+Source0:	http://www.go-mono.com/archive/beta3/gtk-sharp-%{version}.tar.gz
+# Source0-md5:	39f8db2c65a687e6ac799b42d8d1304f
 Patch0:		%{name}-gtkhtml31.patch
-Patch1:		%{name}-mint.patch
+Patch1:		%{name}-destdir.patch
+Patch2:		%{name}-mint.patch
 URL:		http://gtk-sharp.sf.net/
 Obsoletes:	gtk-sharp
 Obsoletes:	dotnet-gtk
@@ -27,14 +27,11 @@ BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	mono-csharp
-BuildRequires:	mono-devel >= 0.95
+BuildRequires:	mono-devel >= 0.96
 BuildRequires:	ncurses-devel
 BuildRequires:	rpm-perlprov
 BuildRequires:	vte-devel >= 0.11.10
 ExcludeArch:	amd64
-# temporary, there is cyclic dependence between this package version
-# and monodoc version
-BuildConflicts:	monodoc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,6 +43,7 @@ GNOME2.
 
 %package devel
 Summary:	Development part of GTK#
+Summary(pl):	Czê¶æ dla programistów GTK#
 Group:		Development/Libraries
 Obsoletes:	gtk-sharp-devel
 Obsoletes:	dotnet-gtk-devel
@@ -81,6 +79,7 @@ Biblioteki statyczne gtk-sharp.
 %setup -q -n gtk-sharp-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 %build
 rm -rf autom4te.cache
@@ -99,7 +98,6 @@ install -d $RPM_BUILD_ROOT{%{perl_vendorlib},%{_examplesdir}/%{name}-%{version}}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-#mv -f $RPM_BUILD_ROOT%{_datadir}/perl5/GAPI $RPM_BUILD_ROOT%{perl_vendorlib}
 cp -a sample/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
@@ -121,10 +119,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc README.generator ChangeLog
 %attr(755,root,root) %{_bindir}/gapi*
 %{_datadir}/gapi
-#%{perl_vendorlib}/GAPI
 %{_examplesdir}/%{name}-%{version}
 %{_pkgconfigdir}/*
 %{_libdir}/mono/gtk-sharp
+%{_docdir}/gtk-sharp
 
 %files static
 %defattr(644,root,root,755)
