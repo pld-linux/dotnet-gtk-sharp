@@ -5,7 +5,7 @@ diff -urN gtk-sharp-0.98.orig/configure.in gtk-sharp-0.98/configure.in
  	PKG_CHECK_MODULES(GTKHTML_DEPENDENCIES, libgtkhtml-3.1 >= $GTKHTML_REQUIRED_VERSION, enable_gtkhtml=yes, enable_gtkhtml=no)
  	if test "x$enable_gtkhtml" = "xyes"; then
  		GTKHTML_VERSION=3.1
--		GTKHTML_SOVERSION=7
+-		GTKHTML_SOVERSION=11
 +		GTKHTML_SOVERSION=$GTKHTMLSOVERSION
  	else
  		GTKHTML_VERSION=
