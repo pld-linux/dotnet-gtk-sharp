@@ -5,7 +5,7 @@ diff -Nuard gtk-sharp-1.0.orig/art/art-sharp.pc.in gtk-sharp-1.0/art/art-sharp.p
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
-+libdir=${exec_prefix}@libdir@
++libdir=@libdir@
  
  
  Name: Art#
@@ -16,7 +16,7 @@ diff -Nuard gtk-sharp-1.0.orig/gconf/GConf/gconf-sharp.pc.in gtk-sharp-1.0/gconf
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
-+libdir=${exec_prefix}@libdir@
++libdir=@libdir@
  
  
  Name: GConf#
@@ -27,7 +27,7 @@ diff -Nuard gtk-sharp-1.0.orig/gda/gda-sharp.pc.in gtk-sharp-1.0/gda/gda-sharp.p
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
-+libdir=${exec_prefix}@libdir@
++libdir=@libdir@
  
  
  Name: Gda#
@@ -38,7 +38,7 @@ diff -Nuard gtk-sharp-1.0.orig/glade/glade-sharp.pc.in gtk-sharp-1.0/glade/glade
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
-+libdir=${exec_prefix}@libdir@
++libdir=@libdir@
  
  
  Name: Glade#
@@ -49,7 +49,7 @@ diff -Nuard gtk-sharp-1.0.orig/gnome/gnome-sharp.pc.in gtk-sharp-1.0/gnome/gnome
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
-+libdir=${exec_prefix}@libdir@
++libdir=@libdir@
  
  
  Name: Gnome#
