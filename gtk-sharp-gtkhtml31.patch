@@ -1,11 +1,18 @@
-diff -urN aa/gtk-sharp-0.15/configure.in gtk-sharp-0.15/configure.in
---- aa/gtk-sharp-0.15/configure.in	2003-11-19 03:26:47.000000000 +0100
-+++ gtk-sharp-0.15/configure.in	2004-02-07 19:23:42.553288664 +0100
-@@ -101,6 +101,7 @@
+diff -urN aa/gtk-sharp-0.16/configure.in gtk-sharp-0.16/configure.in
+--- aa/gtk-sharp-0.16/configure.in	2004-01-17 23:47:35.000000000 +0100
++++ gtk-sharp-0.16/configure.in	2004-02-16 14:30:08.226008352 +0100
+@@ -101,6 +101,14 @@
  
  GTKHTML_REQUIRED_VERSION=3.0
  PKG_CHECK_MODULES(GTKHTML_DEPENDENCIES, libgtkhtml-3.0 >= $GTKHTML_REQUIRED_VERSION, enable_gtkhtml=yes, enable_gtkhtml=no)
-+PKG_CHECK_MODULES(GTKHTML_DEPENDENCIES, libgtkhtml-3.1 >= $GTKHTML_REQUIRED_VERSION, enable_gtkhtml=yes, enable_gtkhtml=no)
++PKG_CHECK_MODULES(GTKHTML_DEPENDENCIES, libgtkhtml-3.1 >= $GTKHTML_REQUIRED_VERSION, enable_gtkhtml31=yes, enable_gtkhtml31=no)
++if test "x$enable_gtkhtml31" = "xyes"; then
++	enable_gtkhtml=yes
++	for i in gtkhtml/gtkhtml-api.xml sources/gtk-sharp-sources.xml; do
++		sed -e 's/"gtkhtml-3.0"/"gtkhtml-3.1"/' $i > gtkhtml-tmp
++		mv -f gtkhtml-tmp $i
++	done
++fi
  if test "x$enable_gtkhtml" = "xyes"; then
  	BASE_DEPENDENCIES_CFLAGS="$BASE_DEPENDENCIES_CFLAGS $GTKHTML_DEPENDENCIES_CFLAGS"
  	BASE_DEPENDENCIES_LIBS="$BASE_DEPENDENCIES_LIBS $GTKHTML_DEPENDENCIES_LIBS"
