@@ -60,7 +60,7 @@ diff -Nuard gtk-sharp-1.0.orig/gnomedb/gnomedb-sharp.pc.in gtk-sharp-1.0/gnomedb
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
-+libdir=${exec_prefix}@libdir@
++libdir=@libdir@
  
  
  Name: GnomeDB#
@@ -71,7 +71,7 @@ diff -Nuard gtk-sharp-1.0.orig/gtkhtml/gtkhtml-sharp.pc.in gtk-sharp-1.0/gtkhtml
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
-+libdir=${exec_prefix}@libdir@
++libdir=@libdir@
  
  
  Name: Gtkhtml#
@@ -82,7 +82,7 @@ diff -Nuard gtk-sharp-1.0.orig/gtk-sharp.pc.in gtk-sharp-1.0/gtk-sharp.pc.in
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
-+libdir=${exec_prefix}@libdir@
++libdir=@libdir@
  
  
  Name: Gtk#
@@ -93,7 +93,7 @@ diff -Nuard gtk-sharp-1.0.orig/rsvg/rsvg-sharp.pc.in gtk-sharp-1.0/rsvg/rsvg-sha
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
-+libdir=${exec_prefix}@libdir@
++libdir=@libdir@
  
  
  Name: Rsvg#
@@ -104,7 +104,7 @@ diff -Nuard gtk-sharp-1.0.orig/vte/vte-sharp.pc.in gtk-sharp-1.0/vte/vte-sharp.p
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
-+libdir=${exec_prefix}@libdir@
++libdir=@libdir@
  
  
  Name: Vte#
