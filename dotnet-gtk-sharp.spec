@@ -1,3 +1,4 @@
+# TODO: split (at least gtk, gnome, gda, gnomedb)
 #
 # Conditional build:
 %bcond_without	gda	# don't build gda binding
@@ -43,6 +44,7 @@ BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	vte-devel >= 0.11.10
 %endif
 %{?with_gnome:Requires:	gtkhtml = %{gtkhtml_version}}
+Requires:	mono >= 1.0.2
 Provides:	dotnet-gtk
 Provides:	gtk-sharp
 Obsoletes:	dotnet-gtk
