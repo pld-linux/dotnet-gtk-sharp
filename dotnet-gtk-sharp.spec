@@ -22,6 +22,7 @@ BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	mono-csharp
 BuildRequires:  mono-devel
+BuildRequires:  ncurses-devel
 BuildRequires:	rpm-perlprov
 BuildRequires:	vte-devel >= 0.11.10
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
