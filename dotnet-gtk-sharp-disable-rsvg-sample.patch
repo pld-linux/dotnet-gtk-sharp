@@ -1,0 +1,9 @@
+diff -Nuard gtk-sharp-1.0.orig/sample/Makefile.am gtk-sharp-1.0/sample/Makefile.am
+--- gtk-sharp-1.0.orig/sample/Makefile.am	2004-06-22 17:19:02.000000000 +0200
++++ gtk-sharp-1.0/sample/Makefile.am	2004-06-30 22:14:31.432234864 +0200
+@@ -1,4 +1,4 @@
+-SUBDIRS = gconf rsvg test GtkDemo pixmaps
++SUBDIRS = gconf test GtkDemo pixmaps
+ 
+ if ENABLE_GNOME
+ GNOME_TARGETS=gnome-hello-world.exe canvas-example.exe fifteen.exe print.exe
