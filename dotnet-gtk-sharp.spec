@@ -1,3 +1,4 @@
+# TODO: fix perl stuff?
 Summary:	.NET language bindings for Gtk+ and GNOME
 Summary(pl):	Wi±zania Gtk+ oraz GNOME dla .NET
 Name:		gtk-sharp
@@ -59,6 +60,12 @@ mv -f $RPM_BUILD_ROOT%{_datadir}/perl5/* $RPM_BUILD_ROOT%{_libdir}/perl5/site_pe
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -a sample/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
 %doc README
@@ -73,6 +80,3 @@ cp -a sample/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %{_datadir}/gapi
 %{_libdir}/perl5/site_perl/*
 %{_examplesdir}/%{name}-%{version}
-
-%clean
-rm -rf $RPM_BUILD_ROOT
