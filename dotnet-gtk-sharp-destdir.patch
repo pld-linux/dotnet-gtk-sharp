@@ -1,0 +1,12 @@
+diff -urN gtk-sharp-0.98.orig/configure.in gtk-sharp-0.98/configure.in
+--- gtk-sharp-0.98.orig/configure.in	2004-06-20 12:44:16.977015568 +0200
++++ gtk-sharp-0.98/configure.in	2004-06-20 13:09:54.851223152 +0200
+@@ -64,7 +64,7 @@
+ PKG_CHECK_MODULES(MONO_DEPENDENCY, mono >= $MONO_REQUIRED_VERSION, has_mono=true, has_mono=false)
+ 
+ if test "x$has_mono" = "xtrue"; then
+-GACUTIL_FLAGS='/package $(PACKAGE) /gacdir $(libdir)'
++GACUTIL_FLAGS='/package $(PACKAGE) /root $(DESTDIR)$(libdir)'
+ GENERATED_SOURCES=generated/*.cs
+ AC_PATH_PROG(RUNTIME, mono, no)
+ AC_PATH_PROG(CSC, mcs, no)
