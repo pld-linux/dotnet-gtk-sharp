@@ -1,0 +1,11 @@
+diff -urN aa/gtk-sharp-0.15/configure.in gtk-sharp-0.15/configure.in
+--- aa/gtk-sharp-0.15/configure.in	2003-11-19 03:26:47.000000000 +0100
++++ gtk-sharp-0.15/configure.in	2004-02-07 19:23:42.553288664 +0100
+@@ -101,6 +101,7 @@
+ 
+ GTKHTML_REQUIRED_VERSION=3.0
+ PKG_CHECK_MODULES(GTKHTML_DEPENDENCIES, libgtkhtml-3.0 >= $GTKHTML_REQUIRED_VERSION, enable_gtkhtml=yes, enable_gtkhtml=no)
++PKG_CHECK_MODULES(GTKHTML_DEPENDENCIES, libgtkhtml-3.1 >= $GTKHTML_REQUIRED_VERSION, enable_gtkhtml=yes, enable_gtkhtml=no)
+ if test "x$enable_gtkhtml" = "xyes"; then
+ 	BASE_DEPENDENCIES_CFLAGS="$BASE_DEPENDENCIES_CFLAGS $GTKHTML_DEPENDENCIES_CFLAGS"
+ 	BASE_DEPENDENCIES_LIBS="$BASE_DEPENDENCIES_LIBS $GTKHTML_DEPENDENCIES_LIBS"
