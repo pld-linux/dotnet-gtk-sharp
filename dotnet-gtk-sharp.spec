@@ -1,5 +1,5 @@
 %define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.6.so.* | /usr/bin/head -n 1 | /usr/bin/awk '{ split($1,v,"."); print v[4]; }')
-%define		gtkhtml_version		%(if [ -e /usr/bin/pkg-config ]; then /usr/bin/pkg-config --modversion libgtkhtml-3.6; else echo 0; fi)
+%define		gtkhtml_version		%(if [ -e /usr/bin/pkg-config ]; then /usr/bin/pkg-config --modversion libgtkhtml-3.6 2>/dev/null || echo 0; else echo 0; fi)
 %include	/usr/lib/rpm/macros.perl
 Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
