@@ -24,8 +24,8 @@ BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	mono-csharp
-BuildRequires:  mono-devel
-BuildRequires:  ncurses-devel
+BuildRequires:	mono-devel
+BuildRequires:	ncurses-devel
 BuildRequires:	rpm-perlprov
 BuildRequires:	vte-devel >= 0.11.10
 # temporary, there is cyclic dependence between this package version
@@ -96,8 +96,8 @@ cp -a sample/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
