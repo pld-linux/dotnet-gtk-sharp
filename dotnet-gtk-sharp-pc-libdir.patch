@@ -1,0 +1,110 @@
+diff -Nuard gtk-sharp-1.0.orig/art/art-sharp.pc.in gtk-sharp-1.0/art/art-sharp.pc.in
+--- gtk-sharp-1.0.orig/art/art-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
++++ gtk-sharp-1.0/art/art-sharp.pc.in	2004-06-30 23:55:28.912171976 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}@libdir@
+ 
+ 
+ Name: Art#
+diff -Nuard gtk-sharp-1.0.orig/gconf/GConf/gconf-sharp.pc.in gtk-sharp-1.0/gconf/GConf/gconf-sharp.pc.in
+--- gtk-sharp-1.0.orig/gconf/GConf/gconf-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
++++ gtk-sharp-1.0/gconf/GConf/gconf-sharp.pc.in	2004-06-30 23:55:19.854548944 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}@libdir@
+ 
+ 
+ Name: GConf#
+diff -Nuard gtk-sharp-1.0.orig/gda/gda-sharp.pc.in gtk-sharp-1.0/gda/gda-sharp.pc.in
+--- gtk-sharp-1.0.orig/gda/gda-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
++++ gtk-sharp-1.0/gda/gda-sharp.pc.in	2004-06-30 23:55:12.298697608 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}@libdir@
+ 
+ 
+ Name: Gda#
+diff -Nuard gtk-sharp-1.0.orig/glade/glade-sharp.pc.in gtk-sharp-1.0/glade/glade-sharp.pc.in
+--- gtk-sharp-1.0.orig/glade/glade-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
++++ gtk-sharp-1.0/glade/glade-sharp.pc.in	2004-06-30 23:55:05.520728016 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}@libdir@
+ 
+ 
+ Name: Glade#
+diff -Nuard gtk-sharp-1.0.orig/gnome/gnome-sharp.pc.in gtk-sharp-1.0/gnome/gnome-sharp.pc.in
+--- gtk-sharp-1.0.orig/gnome/gnome-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
++++ gtk-sharp-1.0/gnome/gnome-sharp.pc.in	2004-06-30 23:54:59.878585752 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}@libdir@
+ 
+ 
+ Name: Gnome#
+diff -Nuard gtk-sharp-1.0.orig/gnomedb/gnomedb-sharp.pc.in gtk-sharp-1.0/gnomedb/gnomedb-sharp.pc.in
+--- gtk-sharp-1.0.orig/gnomedb/gnomedb-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
++++ gtk-sharp-1.0/gnomedb/gnomedb-sharp.pc.in	2004-06-30 23:54:54.954334352 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}@libdir@
+ 
+ 
+ Name: GnomeDB#
+diff -Nuard gtk-sharp-1.0.orig/gtkhtml/gtkhtml-sharp.pc.in gtk-sharp-1.0/gtkhtml/gtkhtml-sharp.pc.in
+--- gtk-sharp-1.0.orig/gtkhtml/gtkhtml-sharp.pc.in	2004-05-13 21:23:16.000000000 +0200
++++ gtk-sharp-1.0/gtkhtml/gtkhtml-sharp.pc.in	2004-06-30 23:54:49.699133264 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}@libdir@
+ 
+ 
+ Name: Gtkhtml#
+diff -Nuard gtk-sharp-1.0.orig/gtk-sharp.pc.in gtk-sharp-1.0/gtk-sharp.pc.in
+--- gtk-sharp-1.0.orig/gtk-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
++++ gtk-sharp-1.0/gtk-sharp.pc.in	2004-06-30 23:54:29.278237712 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}@libdir@
+ 
+ 
+ Name: Gtk#
+diff -Nuard gtk-sharp-1.0.orig/rsvg/rsvg-sharp.pc.in gtk-sharp-1.0/rsvg/rsvg-sharp.pc.in
+--- gtk-sharp-1.0.orig/rsvg/rsvg-sharp.pc.in	2004-05-13 21:23:16.000000000 +0200
++++ gtk-sharp-1.0/rsvg/rsvg-sharp.pc.in	2004-06-30 23:54:41.678352608 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}@libdir@
+ 
+ 
+ Name: Rsvg#
+diff -Nuard gtk-sharp-1.0.orig/vte/vte-sharp.pc.in gtk-sharp-1.0/vte/vte-sharp.pc.in
+--- gtk-sharp-1.0.orig/vte/vte-sharp.pc.in	2004-05-13 21:23:16.000000000 +0200
++++ gtk-sharp-1.0/vte/vte-sharp.pc.in	2004-06-30 23:54:36.541133584 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=${exec_prefix}@libdir@
+ 
+ 
+ Name: Vte#
