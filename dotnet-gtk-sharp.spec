@@ -7,7 +7,7 @@ Release:	1
 License:	LGPL
 Group:		Development/Libraries
 #Source0:	http://belnet.dl.sourceforge.net/gtk-sharp/gtk-sharp-%{version}.tar.gz
-Source0:	http://www.go-mono.com/archive/beta1/gtk-sharp-%{version}.tar.gz
+Source0:	http://www.go-mono.com/archive/beta2/gtk-sharp-%{version}.tar.gz
 # Source0-md5:	b8a1a3a0fc75142fd3867976cd9254c1
 Patch0:		%{name}-gtkhtml31.patch
 URL:		http://gtk-sharp.sf.net/
