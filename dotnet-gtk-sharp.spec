@@ -3,21 +3,22 @@ Summary:	.NET language bindings for Gtk+ and GNOME
 Summary(pl):	Wi±zania Gtk+ oraz GNOME dla .NET
 Name:		gtk-sharp
 Version:	0.15
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://dl.sourceforge.net/gtk-sharp/%{name}-%{version}.tar.gz
 # Source0-md5:	f61b6da79cb66a87fa80cf0bd6831aaa
+Patch0:		%{name}-gtkhtml31.patch
 URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtkhtml-devel >= 3.0.0
-BuildRequires:	libgda-devel
-BuildRequires:	libglade2-devel
+BuildRequires:	libgda-devel >= 1.0.0
+BuildRequires:	libglade2-devel >= 2.0.1
 BuildRequires:	libgnomecanvas-devel >= 2.4.0
-#BuildRequires:	libgnomedb
+BuildRequires:	libgnomedb >= 1.0.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
-BuildRequires:	librsvg-devel
+BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	mono-csharp
 BuildRequires:	rpm-perlprov
@@ -57,6 +58,7 @@ Biblioteki statyczne gtk-sharp.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
