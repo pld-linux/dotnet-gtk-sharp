@@ -1,4 +1,9 @@
-%define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.6.so.* | /usr/bin/head -n 1 | /usr/bin/awk '{ split($1,v,"."); print v[4]; }')
+#
+# Conditional build:
+%bcond_without	gda	# don't build gda binding
+%bcond_without	gnome	# don't build GNOME (and dependent) bindings
+#
+%define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.6.so.* 2>/dev/null | /usr/bin/head -n 1 | /bin/awk '{ split($1,v,"."); print v[4]; }')
 %define		gtkhtml_version		%(if [ -e /usr/bin/pkg-config ]; then /usr/bin/pkg-config --modversion libgtkhtml-3.6 2>/dev/null || echo 0; else echo 0; fi)
 %include	/usr/lib/rpm/macros.perl
 Summary:	.NET language bindings for GTK+ and GNOME
@@ -19,14 +24,9 @@ URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gawk
-BuildRequires:	gtkhtml-devel >= 3.6.1
 BuildRequires:	libart_lgpl-devel >= 2.2.0
-BuildRequires:	libgda-devel >= 1.0.0
+%{?with_gda:BuildRequires:	libgda-devel >= 1.0.0}
 BuildRequires:	libglade2-devel >= 2.0.1
-BuildRequires:	libgnomecanvas-devel >= 2.4.0
-BuildRequires:	libgnomedb-devel >= 1.0.0
-BuildRequires:	libgnomeprintui-devel >= 2.4.0
-BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
@@ -34,8 +34,15 @@ BuildRequires:	mono-csharp >= 1.0.2
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov
+%if %{with gnome}
+BuildRequires:	gtkhtml-devel >= 3.6.1
+BuildRequires:	libgnomecanvas-devel >= 2.4.0
+%{?with_gda:BuildRequires:	libgnomedb-devel >= 1.0.0}
+BuildRequires:	libgnomeprintui-devel >= 2.4.0
+BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	vte-devel >= 0.11.10
-Requires:	gtkhtml = %{gtkhtml_version}
+%endif
+%{?with_gnome:Requires:	gtkhtml = %{gtkhtml_version}}
 Provides:	dotnet-gtk
 Provides:	gtk-sharp
 Obsoletes:	dotnet-gtk
@@ -92,14 +99,15 @@ Biblioteki statyczne gtk-sharp.
 #%patch3 -p1
 %patch4 -p1
 
+# workaround for variable name
+echo 'm4_pattern_allow(PKG_PATH)' > acinclude.m4
+
 %build
-rm -rf autom4te.cache
 %{__libtoolize}
 %{__aclocal}
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-
 %configure \
 	GTKHTMLSOVERSION=%{gtkhtml_soversion}
 %{__make}
