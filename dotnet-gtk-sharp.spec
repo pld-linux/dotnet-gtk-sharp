@@ -1,4 +1,4 @@
-%define		gtkhtml_soversion	%(/bin/ls /usr/lib/libgtkhtml-3.1.so.* | /usr/bin/head -1 | /usr/bin/awk '{ split($1,v,"."); print v[4]; }')
+%define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.1.so.* | /usr/bin/head -1 | /usr/bin/awk '{ split($1,v,"."); print v[4]; }')
 %define		gtkhtml_version		%(/usr/bin/pkg-config --modversion libgtkhtml-3.1)
 %include	/usr/lib/rpm/macros.perl
 Summary:	.NET language bindings for Gtk+ and GNOME
