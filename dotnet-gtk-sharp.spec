@@ -24,7 +24,7 @@ BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	mono-csharp
-BuildRequires:	mono-devel
+BuildRequires:	mono-devel >= 0.91
 BuildRequires:	ncurses-devel
 BuildRequires:	rpm-perlprov
 BuildRequires:	vte-devel >= 0.11.10
