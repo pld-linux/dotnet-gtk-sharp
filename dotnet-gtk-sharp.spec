@@ -46,7 +46,9 @@ GNOME2.
 Summary:	Development part of GTK#
 Group:		Development/Libraries
 Obsoletes:	gtk-sharp-devel
+Obsoletes:	dotnet-gtk-devel
 Provides:	gtk-sharp-devel
+Provides:	dotnet-gtk-devel
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
@@ -62,7 +64,9 @@ Summary:	Static gtk-sharp libraries
 Summary(pl):	Biblioteki statyczne gtk-sharp
 Group:		Development/Libraries
 Obsoletes:	gtk-sharp-static
+Obsoletes:	dotnet-gtk-static
 Provides:	gtk-sharp-static
+Provides:	dotnet-gtk-static
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
