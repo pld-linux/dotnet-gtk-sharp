@@ -5,7 +5,7 @@ Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
 Version:	1.0.6
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Development/Libraries
 Source0:	http://www.go-mono.com/archive/%{version}/gtk-sharp-%{version}.tar.gz
@@ -19,7 +19,7 @@ URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gawk
-BuildRequires:	gtkhtml-devel >= 3.6.0
+BuildRequires:	gtkhtml-devel >= 3.6.1
 BuildRequires:	libart_lgpl-devel >= 2.2.0
 BuildRequires:	libgda-devel >= 1.0.0
 BuildRequires:	libglade2-devel >= 2.0.1
