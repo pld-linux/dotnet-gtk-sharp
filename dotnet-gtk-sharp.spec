@@ -1,8 +1,8 @@
 %define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.1.so.* | /usr/bin/head -n 1 | /usr/bin/awk '{ split($1,v,"."); print v[4]; }')
 %define		gtkhtml_version		%(if [ -e /usr/bin/pkg-config ]; then /usr/bin/pkg-config --modversion libgtkhtml-3.1; else echo 0; fi)
 %include	/usr/lib/rpm/macros.perl
-Summary:	.NET language bindings for Gtk+ and GNOME
-Summary(pl):	Wi您ania Gtk+ oraz GNOME dla .NET
+Summary:	.NET language bindings for GTK+ and GNOME
+Summary(pl):	Wi您ania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
 Version:	1.0.2
 Release:	3
@@ -44,10 +44,10 @@ ExcludeArch:	alpha
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This package provides bindings for .NET to Gtk+2 and GNOME2 libraries.
+This package provides bindings for .NET to GTK+2 and GNOME2 libraries.
 
 %description -l pl
-Pakiet ten dostarcza wi您ania dla .NET do bibliotek z Gtk+2 oraz
+Pakiet ten dostarcza wi您ania dla .NET do bibliotek z GTK+2 oraz
 GNOME2.
 
 %package devel
