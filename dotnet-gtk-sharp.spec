@@ -1,22 +1,25 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	.NET language bindings for Gtk+ and GNOME
 Summary(pl):	Wi±zania Gtk+ oraz GNOME dla .NET
-Name:		gtk-sharp
-Version:	0.18
-Release:	2
+Name:		dotnet-gtk
+Version:	0.91.1
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
-Source0:	http://belnet.dl.sourceforge.net/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	aa85960a335801c813b522bbc8438b2c
+#Source0:	http://belnet.dl.sourceforge.net/gtk-sharp/gtk-sharp-%{version}.tar.gz
+Source0:	http://www.go-mono.com/archive/beta1/gtk-sharp-%{version}.tar.gz
+# Source0-md5:	5e4537398dba1e88886f9c0193df4602
 Patch0:		%{name}-gtkhtml31.patch
 URL:		http://gtk-sharp.sf.net/
+Obsoletes:	gtk-sharp
+Provides:	gtk-sharp
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtkhtml-devel >= 3.0.0
 BuildRequires:	libgda-devel >= 1.0.0
 BuildRequires:	libglade2-devel >= 2.0.1
 BuildRequires:	libgnomecanvas-devel >= 2.4.0
-BuildRequires:	libgnomedb >= 1.0.0
+BuildRequires:	libgnomedb-devel >= 1.0.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
@@ -25,6 +28,9 @@ BuildRequires:  mono-devel
 BuildRequires:  ncurses-devel
 BuildRequires:	rpm-perlprov
 BuildRequires:	vte-devel >= 0.11.10
+# temporary, there is cyclic dependence between this package version
+# and monodoc version
+BuildConflicts:	monodoc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,6 +43,8 @@ GNOME2.
 %package devel
 Summary:	Development part of GTK#
 Group:		Development/Libraries
+Obsoletes:	gtk-sharp-devel
+Provides:	gtk-sharp-devel
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
@@ -51,6 +59,8 @@ potrzebne przy tworzeniu aplikacji korzystaj±cych z GTK#.
 Summary:	Static gtk-sharp libraries
 Summary(pl):	Biblioteki statyczne gtk-sharp
 Group:		Development/Libraries
+Obsoletes:	gtk-sharp-static
+Provides:	gtk-sharp-static
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
@@ -60,7 +70,7 @@ Static gtk-sharp libraries.
 Biblioteki statyczne gtk-sharp.
 
 %prep
-%setup -q
+%setup -q -n gtk-sharp-%{version}
 %patch0 -p1
 
 %build
@@ -95,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gconfsharp-schemagen*
 %attr(755,root,root) %{_libdir}/lib*sharpglue.so
 %{_libdir}/lib*sharpglue.la
-%{_libdir}/*.dll
+%{_libdir}/mono/gac/*
 
 %files devel
 %defattr(644,root,root,755)
@@ -105,6 +115,7 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/GAPI
 %{_examplesdir}/%{name}-%{version}
 %{_pkgconfigdir}/*
+%{_libdir}/mono/gtk-sharp
 
 %files static
 %defattr(644,root,root,755)
