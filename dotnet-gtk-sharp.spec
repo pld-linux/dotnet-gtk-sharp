@@ -102,7 +102,6 @@ rm -rf autom4te.cache
 
 %configure \
 	GTKHTMLSOVERSION=%{gtkhtml_soversion}
-    
 %{__make}
 
 %install
