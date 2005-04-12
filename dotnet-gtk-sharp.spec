@@ -11,10 +11,10 @@ Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
 Version:	1.0.6
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Development/Libraries
-Source0:	http://www.go-mono.com/archive/%{version}/gtk-sharp-%{version}.tar.gz
+Source0:	http://www.go-mono.com/archive/1.0.6/gtk-sharp-%{version}.tar.gz
 # Source0-md5:	2651d14fe77174ab20b8af53d150ee11
 Patch0:		%{name}-gtkhtml31.patch
 Patch1:		%{name}-destdir.patch
@@ -35,13 +35,15 @@ BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov
 %if %{with gnome}
-BuildRequires:	gtkhtml-devel >= 3.6.1
+BuildRequires:	gtkhtml-devel >= 3.6.2
 BuildRequires:	libgnomecanvas-devel >= 2.4.0
 %{?with_gda:BuildRequires:	libgnomedb-devel >= 1.0.0}
 BuildRequires:	libgnomeprintui-devel >= 2.4.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	vte-devel >= 0.11.10
 %endif
+BuildRequires:	rpmbuild(macros) >= 1.197
+Requires(post,postun):	/sbin/ldconfig
 %{?with_gnome:Requires:	gtkhtml = %{gtkhtml_version}}
 Requires:	mono >= 1.0.2
 Provides:	dotnet-gtk
@@ -124,8 +126,11 @@ cp -a sample/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post
+%ldconfig_post
+
+%postun
+%ldconfig_postun
 
 %files
 %defattr(644,root,root,755)
