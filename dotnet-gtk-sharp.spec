@@ -42,8 +42,6 @@ BuildRequires:	libgnomeprintui-devel >= 2.4.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	vte-devel >= 0.11.10
 %endif
-BuildRequires:	rpmbuild(macros) >= 1.197
-Requires(post,postun):	/sbin/ldconfig
 %{?with_gnome:Requires:	gtkhtml = %{gtkhtml_version}}
 Requires:	mono >= 1.0.2
 Provides:	dotnet-gtk
@@ -126,11 +124,8 @@ cp -a sample/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-%ldconfig_post
-
-%postun
-%ldconfig_postun
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
