@@ -4,19 +4,16 @@
 %bcond_without	gda	# don't build gda binding
 %bcond_without	gnome	# don't build GNOME (and dependent) bindings
 #
-%define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.6.so.* 2>/dev/null | /usr/bin/head -n 1 | /bin/awk '{ split($1,v,"."); print v[4]; }')
-%define		gtkhtml_version		%(if [ -e /usr/bin/pkg-config ]; then /usr/bin/pkg-config --modversion libgtkhtml-3.6 2>/dev/null || echo 0; else echo 0; fi)
 %include	/usr/lib/rpm/macros.perl
 Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
-Version:	1.0.6
-Release:	4
+Version:	1.9.3
+Release:	1
 License:	LGPL
 Group:		Development/Libraries
-Source0:	http://www.go-mono.com/archive/1.0.6/gtk-sharp-%{version}.tar.gz
-# Source0-md5:	2651d14fe77174ab20b8af53d150ee11
-Patch0:		%{name}-gtkhtml31.patch
+Source0:	http://www.go-mono.com/archive/1.1.6/gtk-sharp-%{version}.tar.gz
+# Source0-md5:	c7654c4947a554d7fd588f035c7ef92a
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
 Patch3:		%{name}-pc-libdir.patch
@@ -30,7 +27,7 @@ BuildRequires:	libglade2-devel >= 2.0.1
 BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
-BuildRequires:	mono-csharp >= 1.0.2
+BuildRequires:	mono-csharp >= 1.1.6
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov
@@ -42,8 +39,7 @@ BuildRequires:	libgnomeprintui-devel >= 2.4.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	vte-devel >= 0.11.10
 %endif
-%{?with_gnome:Requires:	gtkhtml = %{gtkhtml_version}}
-Requires:	mono >= 1.0.2
+Requires:	mono >= 1.1.6
 Provides:	dotnet-gtk
 Provides:	gtk-sharp
 Obsoletes:	dotnet-gtk
@@ -94,9 +90,10 @@ Biblioteki statyczne gtk-sharp.
 
 %prep
 %setup -q -n gtk-sharp-%{version}
-%patch0 -p1
 %patch1 -p1
 %patch2 -p1
+# for patch3:
+# sed -i -e 's|libdir=${exec_prefix}/lib|libdir=@libdir@|' `find . -name '*.pc.in'`
 %patch3 -p1
 
 # workaround for variable name
@@ -108,8 +105,7 @@ echo 'm4_pattern_allow(PKG_PATH)' > acinclude.m4
 %{__autoheader}
 %{__automake}
 %{__autoconf}
-%configure \
-	GTKHTMLSOVERSION=%{gtkhtml_soversion}
+%configure
 %{__make}
 
 %install
@@ -130,20 +126,21 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README
-%attr(755,root,root) %{_bindir}/gconfsharp-schemagen*
-%attr(755,root,root) %{_libdir}/lib*sharpglue.so
-%{_libdir}/lib*sharpglue.la
+%attr(755,root,root) %{_bindir}/gconfsharp2-schemagen*
+%attr(755,root,root) %{_libdir}/lib*sharpglue-2.so
+%{_libdir}/gtk-sharp-2.0
+%{_libdir}/lib*sharpglue-2.la
 %{_libdir}/mono/gac/*
 
 %files devel
 %defattr(644,root,root,755)
 %doc README.generator ChangeLog
-%attr(755,root,root) %{_bindir}/gapi*
-%{_datadir}/gapi
+%attr(755,root,root) %{_bindir}/gapi2*
+%{_datadir}/gapi-2.0
 %{_examplesdir}/%{name}-%{version}
 %{_pkgconfigdir}/*
-%{_libdir}/mono/gtk-sharp
+%{_libdir}/mono/gtk-sharp-2.0
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*sharpglue.a
+%{_libdir}/lib*sharpglue-2.a
