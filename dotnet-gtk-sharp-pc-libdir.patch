@@ -1,17 +1,17 @@
-diff -Nuard gtk-sharp-1.0.orig/art/art-sharp.pc.in gtk-sharp-1.0/art/art-sharp.pc.in
---- gtk-sharp-1.0.orig/art/art-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
-+++ gtk-sharp-1.0/art/art-sharp.pc.in	2004-06-30 23:55:28.912171976 +0200
+diff -aurN gtk-sharp-1.9.3.orig/art/art-sharp-2.0.pc.in gtk-sharp-1.9.3/art/art-sharp-2.0.pc.in
+--- gtk-sharp-1.9.3.orig/art/art-sharp-2.0.pc.in	2005-03-12 19:03:59.000000000 +0100
++++ gtk-sharp-1.9.3/art/art-sharp-2.0.pc.in	2005-04-20 21:43:39.000000000 +0200
 @@ -1,6 +1,6 @@
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
 +libdir=@libdir@
+ gapidir=${prefix}/share/gapi-2.0
  
  
- Name: Art#
-diff -Nuard gtk-sharp-1.0.orig/gconf/GConf/gconf-sharp.pc.in gtk-sharp-1.0/gconf/GConf/gconf-sharp.pc.in
---- gtk-sharp-1.0.orig/gconf/GConf/gconf-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
-+++ gtk-sharp-1.0/gconf/GConf/gconf-sharp.pc.in	2004-06-30 23:55:19.854548944 +0200
+diff -aurN gtk-sharp-1.9.3.orig/gconf/GConf/gconf-sharp-2.0.pc.in gtk-sharp-1.9.3/gconf/GConf/gconf-sharp-2.0.pc.in
+--- gtk-sharp-1.9.3.orig/gconf/GConf/gconf-sharp-2.0.pc.in	2005-03-12 19:04:51.000000000 +0100
++++ gtk-sharp-1.9.3/gconf/GConf/gconf-sharp-2.0.pc.in	2005-04-20 21:43:39.000000000 +0200
 @@ -1,6 +1,6 @@
  prefix=@prefix@
  exec_prefix=${prefix}
@@ -20,9 +20,75 @@ diff -Nuard gtk-sharp-1.0.orig/gconf/GConf/gconf-sharp.pc.in gtk-sharp-1.0/gconf
  
  
  Name: GConf#
-diff -Nuard gtk-sharp-1.0.orig/gda/gda-sharp.pc.in gtk-sharp-1.0/gda/gda-sharp.pc.in
---- gtk-sharp-1.0.orig/gda/gda-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
-+++ gtk-sharp-1.0/gda/gda-sharp.pc.in	2004-06-30 23:55:12.298697608 +0200
+diff -aurN gtk-sharp-1.9.3.orig/gda/gda-sharp-2.0.pc.in gtk-sharp-1.9.3/gda/gda-sharp-2.0.pc.in
+--- gtk-sharp-1.9.3.orig/gda/gda-sharp-2.0.pc.in	2005-03-12 19:04:50.000000000 +0100
++++ gtk-sharp-1.9.3/gda/gda-sharp-2.0.pc.in	2005-04-20 21:43:39.000000000 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=@libdir@
+ gapidir=${prefix}/share/gapi-2.0
+ 
+ 
+diff -aurN gtk-sharp-1.9.3.orig/glade/glade-sharp-2.0.pc.in gtk-sharp-1.9.3/glade/glade-sharp-2.0.pc.in
+--- gtk-sharp-1.9.3.orig/glade/glade-sharp-2.0.pc.in	2005-03-12 19:04:54.000000000 +0100
++++ gtk-sharp-1.9.3/glade/glade-sharp-2.0.pc.in	2005-04-20 21:43:39.000000000 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=@libdir@
+ gapidir=${prefix}/share/gapi-2.0
+ 
+ 
+diff -aurN gtk-sharp-1.9.3.orig/gnome/gnome-sharp-2.0.pc.in gtk-sharp-1.9.3/gnome/gnome-sharp-2.0.pc.in
+--- gtk-sharp-1.9.3.orig/gnome/gnome-sharp-2.0.pc.in	2005-03-12 19:04:51.000000000 +0100
++++ gtk-sharp-1.9.3/gnome/gnome-sharp-2.0.pc.in	2005-04-20 21:43:39.000000000 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=@libdir@
+ gapidir=${prefix}/share/gapi-2.0
+ 
+ 
+diff -aurN gtk-sharp-1.9.3.orig/gnomedb/gnomedb-sharp-2.0.pc.in gtk-sharp-1.9.3/gnomedb/gnomedb-sharp-2.0.pc.in
+--- gtk-sharp-1.9.3.orig/gnomedb/gnomedb-sharp-2.0.pc.in	2005-03-12 19:04:54.000000000 +0100
++++ gtk-sharp-1.9.3/gnomedb/gnomedb-sharp-2.0.pc.in	2005-04-20 21:43:39.000000000 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=@libdir@
+ gapidir=${prefix}/share/gapi-2.0
+ 
+ 
+diff -aurN gtk-sharp-1.9.3.orig/gnomevfs/gnome-vfs-sharp-2.0.pc.in gtk-sharp-1.9.3/gnomevfs/gnome-vfs-sharp-2.0.pc.in
+--- gtk-sharp-1.9.3.orig/gnomevfs/gnome-vfs-sharp-2.0.pc.in	2005-03-12 19:03:54.000000000 +0100
++++ gtk-sharp-1.9.3/gnomevfs/gnome-vfs-sharp-2.0.pc.in	2005-04-20 21:43:39.000000000 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=@libdir@
+ gapidir=${prefix}/share/gapi-2.0
+ 
+ 
+diff -aurN gtk-sharp-1.9.3.orig/gtk/gtk-sharp-2.0.pc.in gtk-sharp-1.9.3/gtk/gtk-sharp-2.0.pc.in
+--- gtk-sharp-1.9.3.orig/gtk/gtk-sharp-2.0.pc.in	2005-03-12 19:03:55.000000000 +0100
++++ gtk-sharp-1.9.3/gtk/gtk-sharp-2.0.pc.in	2005-04-20 21:43:39.000000000 +0200
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=@libdir@
+ gapidir=${prefix}/share/gapi-2.0
+ 
+ 
+diff -aurN gtk-sharp-1.9.3.orig/gtkdotnet/gtk-dotnet-2.0.pc.in gtk-sharp-1.9.3/gtkdotnet/gtk-dotnet-2.0.pc.in
+--- gtk-sharp-1.9.3.orig/gtkdotnet/gtk-dotnet-2.0.pc.in	2005-03-12 19:04:51.000000000 +0100
++++ gtk-sharp-1.9.3/gtkdotnet/gtk-dotnet-2.0.pc.in	2005-04-20 21:43:39.000000000 +0200
 @@ -1,6 +1,6 @@
  prefix=@prefix@
  exec_prefix=${prefix}
@@ -30,81 +96,37 @@ diff -Nuard gtk-sharp-1.0.orig/gda/gda-sharp.pc.in gtk-sharp-1.0/gda/gda-sharp.p
 +libdir=@libdir@
  
  
- Name: Gda#
-diff -Nuard gtk-sharp-1.0.orig/glade/glade-sharp.pc.in gtk-sharp-1.0/glade/glade-sharp.pc.in
---- gtk-sharp-1.0.orig/glade/glade-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
-+++ gtk-sharp-1.0/glade/glade-sharp.pc.in	2004-06-30 23:55:05.520728016 +0200
+ Name: Gtk.DotNet
+diff -aurN gtk-sharp-1.9.3.orig/gtkhtml/gtkhtml-sharp-2.0.pc.in gtk-sharp-1.9.3/gtkhtml/gtkhtml-sharp-2.0.pc.in
+--- gtk-sharp-1.9.3.orig/gtkhtml/gtkhtml-sharp-2.0.pc.in	2005-03-12 19:04:46.000000000 +0100
++++ gtk-sharp-1.9.3/gtkhtml/gtkhtml-sharp-2.0.pc.in	2005-04-20 21:43:39.000000000 +0200
 @@ -1,6 +1,6 @@
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
 +libdir=@libdir@
+ gapidir=${prefix}/share/gapi-2.0
  
  
- Name: Glade#
-diff -Nuard gtk-sharp-1.0.orig/gnome/gnome-sharp.pc.in gtk-sharp-1.0/gnome/gnome-sharp.pc.in
---- gtk-sharp-1.0.orig/gnome/gnome-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
-+++ gtk-sharp-1.0/gnome/gnome-sharp.pc.in	2004-06-30 23:54:59.878585752 +0200
+diff -aurN gtk-sharp-1.9.3.orig/rsvg/rsvg-sharp-2.0.pc.in gtk-sharp-1.9.3/rsvg/rsvg-sharp-2.0.pc.in
+--- gtk-sharp-1.9.3.orig/rsvg/rsvg-sharp-2.0.pc.in	2005-03-12 19:03:49.000000000 +0100
++++ gtk-sharp-1.9.3/rsvg/rsvg-sharp-2.0.pc.in	2005-04-20 21:43:39.000000000 +0200
 @@ -1,6 +1,6 @@
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
 +libdir=@libdir@
+ gapidir=${prefix}/share/gapi-2.0
  
  
- Name: Gnome#
-diff -Nuard gtk-sharp-1.0.orig/gnomedb/gnomedb-sharp.pc.in gtk-sharp-1.0/gnomedb/gnomedb-sharp.pc.in
---- gtk-sharp-1.0.orig/gnomedb/gnomedb-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
-+++ gtk-sharp-1.0/gnomedb/gnomedb-sharp.pc.in	2004-06-30 23:54:54.954334352 +0200
+diff -aurN gtk-sharp-1.9.3.orig/vte/vte-sharp-2.0.pc.in gtk-sharp-1.9.3/vte/vte-sharp-2.0.pc.in
+--- gtk-sharp-1.9.3.orig/vte/vte-sharp-2.0.pc.in	2005-03-12 19:03:59.000000000 +0100
++++ gtk-sharp-1.9.3/vte/vte-sharp-2.0.pc.in	2005-04-20 21:43:39.000000000 +0200
 @@ -1,6 +1,6 @@
  prefix=@prefix@
  exec_prefix=${prefix}
 -libdir=${exec_prefix}/lib
 +libdir=@libdir@
+ gapidir=${prefix}/share/gapi-2.0
  
  
- Name: GnomeDB#
-diff -Nuard gtk-sharp-1.0.orig/gtkhtml/gtkhtml-sharp.pc.in gtk-sharp-1.0/gtkhtml/gtkhtml-sharp.pc.in
---- gtk-sharp-1.0.orig/gtkhtml/gtkhtml-sharp.pc.in	2004-05-13 21:23:16.000000000 +0200
-+++ gtk-sharp-1.0/gtkhtml/gtkhtml-sharp.pc.in	2004-06-30 23:54:49.699133264 +0200
-@@ -1,6 +1,6 @@
- prefix=@prefix@
- exec_prefix=${prefix}
--libdir=${exec_prefix}/lib
-+libdir=@libdir@
- 
- 
- Name: Gtkhtml#
-diff -Nuard gtk-sharp-1.0.orig/gtk-sharp.pc.in gtk-sharp-1.0/gtk-sharp.pc.in
---- gtk-sharp-1.0.orig/gtk-sharp.pc.in	2004-05-13 21:23:15.000000000 +0200
-+++ gtk-sharp-1.0/gtk-sharp.pc.in	2004-06-30 23:54:29.278237712 +0200
-@@ -1,6 +1,6 @@
- prefix=@prefix@
- exec_prefix=${prefix}
--libdir=${exec_prefix}/lib
-+libdir=@libdir@
- 
- 
- Name: Gtk#
-diff -Nuard gtk-sharp-1.0.orig/rsvg/rsvg-sharp.pc.in gtk-sharp-1.0/rsvg/rsvg-sharp.pc.in
---- gtk-sharp-1.0.orig/rsvg/rsvg-sharp.pc.in	2004-05-13 21:23:16.000000000 +0200
-+++ gtk-sharp-1.0/rsvg/rsvg-sharp.pc.in	2004-06-30 23:54:41.678352608 +0200
-@@ -1,6 +1,6 @@
- prefix=@prefix@
- exec_prefix=${prefix}
--libdir=${exec_prefix}/lib
-+libdir=@libdir@
- 
- 
- Name: Rsvg#
-diff -Nuard gtk-sharp-1.0.orig/vte/vte-sharp.pc.in gtk-sharp-1.0/vte/vte-sharp.pc.in
---- gtk-sharp-1.0.orig/vte/vte-sharp.pc.in	2004-05-13 21:23:16.000000000 +0200
-+++ gtk-sharp-1.0/vte/vte-sharp.pc.in	2004-06-30 23:54:36.541133584 +0200
-@@ -1,6 +1,6 @@
- prefix=@prefix@
- exec_prefix=${prefix}
--libdir=${exec_prefix}/lib
-+libdir=@libdir@
- 
- 
- Name: Vte#
