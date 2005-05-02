@@ -47,7 +47,6 @@ Provides:	dotnet-gtk
 Provides:	gtk-sharp
 Obsoletes:	dotnet-gtk
 Obsoletes:	gtk-sharp
-ExcludeArch:	alpha
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
