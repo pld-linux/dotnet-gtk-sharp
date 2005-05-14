@@ -9,12 +9,12 @@
 Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
-Version:	1.9.3
+Version:	1.9.3.1
 Release:	1
 License:	LGPL
 Group:		Development/Libraries
-Source0:	http://www.go-mono.com/archive/1.1.6/gtk-sharp-%{version}.tar.gz
-# Source0-md5:	c7654c4947a554d7fd588f035c7ef92a
+Source0:	http://www.go-mono.com/sources/gtk-sharp-2.0/gtk-sharp-%{version}.tar.gz
+# Source0-md5:	d34848b9b8e19743dd3dc526dc11631c
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
 Patch3:		%{name}-pc-libdir.patch
@@ -28,7 +28,7 @@ BuildRequires:	libglade2-devel >= 2.0.1
 BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
-BuildRequires:	mono-csharp >= 1.1.6
+BuildRequires:	mono-csharp >= 1.1.7
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov
@@ -40,12 +40,11 @@ BuildRequires:	libgnomeprintui-devel >= 2.4.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
 BuildRequires:	vte-devel >= 0.11.10
 %endif
-Requires:	mono >= 1.1.6
+Requires:	mono >= 1.1.7
 Provides:	dotnet-gtk
 Provides:	gtk-sharp
 Obsoletes:	dotnet-gtk
 Obsoletes:	gtk-sharp
-ExcludeArch:	alpha
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
