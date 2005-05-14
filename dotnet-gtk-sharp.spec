@@ -1,4 +1,3 @@
-# TODO: split (at least gtk, gnome, gda, gnomedb)
 #
 # Conditional build:
 %bcond_without	gda	# don't build gda binding
