@@ -35,6 +35,7 @@ BuildRequires:	rpm-perlprov
 %if %{with gnome}
 BuildRequires:	gtkhtml-devel >= 3.6.2
 BuildRequires:	libgnomecanvas-devel >= 2.4.0
+BuildRequires:	gnome-panel-devel >= 2.10.0
 %{?with_gda:BuildRequires:	libgnomedb-devel >= 1.0.0}
 BuildRequires:	libgnomeprintui-devel >= 2.4.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
