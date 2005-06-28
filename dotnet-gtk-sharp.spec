@@ -21,7 +21,6 @@ Patch3:		%{name}-pc-libdir.patch
 URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gawk
 BuildRequires:	libart_lgpl-devel >= 2.2.0
 %{?with_gda:BuildRequires:	libgda-devel >= 1.0.0}
 BuildRequires:	libglade2-devel >= 2.0.1
@@ -33,9 +32,9 @@ BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov
 %if %{with gnome}
+BuildRequires:	gnome-panel-devel >= 2.10.0
 BuildRequires:	gtkhtml-devel >= 3.6.2
 BuildRequires:	libgnomecanvas-devel >= 2.4.0
-BuildRequires:	gnome-panel-devel >= 2.10.0
 %{?with_gda:BuildRequires:	libgnomedb-devel >= 1.0.0}
 BuildRequires:	libgnomeprintui-devel >= 2.4.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
