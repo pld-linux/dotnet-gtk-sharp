@@ -218,12 +218,14 @@ rm -rf $RPM_BUILD_ROOT
 %doc README
 %attr(755,root,root) %{_libdir}/lib*sharpglue-2.so
 %attr(755,root,root) /usr/lib/gtk-sharp-2.0/gapi*
+%dir /usr/lib/gtk-sharp-2.0
 %{_libdir}/lib*sharpglue-2.la
 /usr/lib/mono/gac/art-sharp
 /usr/lib/mono/gac/atk-sharp
 /usr/lib/mono/gac/gdk-sharp
 /usr/lib/mono/gac/glade-sharp
 /usr/lib/mono/gac/glib-sharp
+/usr/lib/mono/gac/gtk-dotnet
 /usr/lib/mono/gac/gtk-sharp
 /usr/lib/mono/gac/pango-sharp
 
@@ -231,10 +233,29 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.generator ChangeLog
 %attr(755,root,root) %{_bindir}/gapi*
-%{_datadir}/gapi-2.0
+%dir /usr/lib/mono/gtk-sharp-2.0
+/usr/lib/mono/gtk-sharp-2.0/art-sharp.dll
+/usr/lib/mono/gtk-sharp-2.0/atk-sharp.dll
+/usr/lib/mono/gtk-sharp-2.0/gdk-sharp.dll
+/usr/lib/mono/gtk-sharp-2.0/glade-sharp.dll
+/usr/lib/mono/gtk-sharp-2.0/glib-sharp.dll
+/usr/lib/mono/gtk-sharp-2.0/gtk-dotnet.dll
+/usr/lib/mono/gtk-sharp-2.0/gtk-sharp.dll
+/usr/lib/mono/gtk-sharp-2.0/pango-sharp.dll
+%dir %{_datadir}/gapi-2.0
+%{_datadir}/gapi-2.0/art-api.xml
+%{_datadir}/gapi-2.0/atk-api.xml
+%{_datadir}/gapi-2.0/gdk-api.xml
+%{_datadir}/gapi-2.0/glade-api.xml
+%{_datadir}/gapi-2.0/gtk-api.xml
+%{_datadir}/gapi-2.0/pango-api.xml
 %{_examplesdir}/%{name}-%{version}
-%{_pkgconfigdir}/*
-/usr/lib/mono/gtk-sharp-2.0
+%{_pkgconfigdir}/art-sharp-2.0.pc
+%{_pkgconfigdir}/gapi-2.0.pc
+%{_pkgconfigdir}/glade-sharp-2.0.pc
+%{_pkgconfigdir}/gtk-dotnet-2.0.pc
+%{_pkgconfigdir}/gtk-sharp-2.0.pc
+
 
 %files static
 %defattr(644,root,root,755)
@@ -251,7 +272,6 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/mono/gac/gconf-sharp-peditors
 /usr/lib/mono/gac/gnome-sharp
 /usr/lib/mono/gac/gnome-vfs-sharp
-/usr/lib/mono/gac/gtk-dotnet
 /usr/lib/mono/gac/gtkhtml-sharp
 /usr/lib/mono/gac/rsvg-sharp
 /usr/lib/mono/gac/vte-sharp
@@ -261,6 +281,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/mono/gtk-sharp-2.0/gconf-sharp.dll
 /usr/lib/mono/gtk-sharp-2.0/gconf-sharp-peditors.dll
 /usr/lib/mono/gtk-sharp-2.0/gnome-sharp.dll
+/usr/lib/mono/gtk-sharp-2.0/gnome-vfs-sharp.dll
 /usr/lib/mono/gtk-sharp-2.0/gtkhtml-sharp.dll
 /usr/lib/mono/gtk-sharp-2.0/rsvg-sharp.dll
 /usr/lib/mono/gtk-sharp-2.0/vte-sharp.dll
@@ -270,6 +291,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gapi-2.0/vte-api.xml
 %{_pkgconfigdir}/gconf-sharp-2.0.pc
 %{_pkgconfigdir}/gnome-sharp-2.0.pc
+%{_pkgconfigdir}/gnome-vfs-sharp-2.0.pc
 %{_pkgconfigdir}/gtkhtml-sharp-2.0.pc
 %{_pkgconfigdir}/rsvg-sharp-2.0.pc
 %{_pkgconfigdir}/vte-sharp-2.0.pc
