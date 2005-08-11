@@ -32,7 +32,7 @@ BuildRequires:	libxml2-devel
 BuildRequires:	mono-csharp >= 1.0.2
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
-BuildRequires:	rpm-build >= 4.4.2-0.3
+BuildRequires:	rpmbuild(monoautodeps)
 BuildRequires:	rpm-perlprov
 %if %{with gnome}
 BuildRequires:	gtkhtml-devel >= 3.6.2
