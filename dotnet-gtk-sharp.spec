@@ -45,10 +45,6 @@ BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	vte-devel >= 0.11.10
 %endif
 Requires:	mono >= 1.0.2
-Provides:	dotnet-gtk
-Provides:	gtk-sharp
-Obsoletes:	dotnet-gtk
-Obsoletes:	gtk-sharp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -63,10 +59,6 @@ Summary:	Development part of GTK#
 Summary(pl):	Czê¶æ dla programistów GTK#
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Provides:	dotnet-gtk-devel
-Provides:	gtk-sharp-devel
-Obsoletes:	dotnet-gtk-devel
-Obsoletes:	gtk-sharp-devel
 
 %description devel
 Tools (C source parser and C# code generator) and documentation for
@@ -81,10 +73,6 @@ Summary:	Static gtk-sharp libraries
 Summary(pl):	Biblioteki statyczne gtk-sharp
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
-Provides:	dotnet-gtk-static
-Provides:	gtk-sharp-static
-Obsoletes:	dotnet-gtk-static
-Obsoletes:	gtk-sharp-static
 
 %description static
 Static gtk-sharp libraries.
