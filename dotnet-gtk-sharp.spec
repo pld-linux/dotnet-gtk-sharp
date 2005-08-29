@@ -14,6 +14,7 @@ Version:	1.0.10
 Release:	1
 License:	LGPL
 Group:		Libraries
+#Source0Download: http://go-mono.com/sources/
 Source0:	http://go-mono.com/sources/gtk-sharp/gtk-sharp-%{version}.tar.gz
 # Source0-md5:	e21fb3c5a39374f86ba70b926311a6d0
 Patch0:		%{name}-gtkhtml31.patch
