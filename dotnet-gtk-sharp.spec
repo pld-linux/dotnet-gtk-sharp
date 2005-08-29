@@ -219,26 +219,26 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libglibsharpglue.la
 %{_libdir}/libgtksharpglue.la
 %{_libdir}/libpangosharpglue.la
-%{_libdir}/mono/gac/art-sharp
-%{_libdir}/mono/gac/atk-sharp
-%{_libdir}/mono/gac/gdk-sharp
-%{_libdir}/mono/gac/glade-sharp
-%{_libdir}/mono/gac/glib-sharp
-%{_libdir}/mono/gac/gtk-sharp
-%{_libdir}/mono/gac/pango-sharp
+%{_prefix}/lib/mono/gac/art-sharp
+%{_prefix}/lib/mono/gac/atk-sharp
+%{_prefix}/lib/mono/gac/gdk-sharp
+%{_prefix}/lib/mono/gac/glade-sharp
+%{_prefix}/lib/mono/gac/glib-sharp
+%{_prefix}/lib/mono/gac/gtk-sharp
+%{_prefix}/lib/mono/gac/pango-sharp
 
 %files devel
 %defattr(644,root,root,755)
 %doc README.generator ChangeLog
 %attr(755,root,root) %{_bindir}/gapi*
 %dir %{_libdir}/mono/gtk-sharp
-%{_libdir}/mono/gtk-sharp/art-sharp.dll
-%{_libdir}/mono/gtk-sharp/atk-sharp.dll
-%{_libdir}/mono/gtk-sharp/gdk-sharp.dll
-%{_libdir}/mono/gtk-sharp/glade-sharp.dll
-%{_libdir}/mono/gtk-sharp/glib-sharp.dll
-%{_libdir}/mono/gtk-sharp/gtk-sharp.dll
-%{_libdir}/mono/gtk-sharp/pango-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/art-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/atk-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/gdk-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/glade-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/glib-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/gtk-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/pango-sharp.dll
 %dir %{_datadir}/gapi
 %{_datadir}/gapi/art-*.xml
 %{_datadir}/gapi/atk-api.xml
@@ -266,21 +266,21 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gconfsharp-schemagen*
 %attr(755,root,root) %{_libdir}/libgnomesharpglue.so
 %{_libdir}/libgnomesharpglue.la
-%{_libdir}/mono/gac/gconf-sharp
-%{_libdir}/mono/gac/gconf-sharp-peditors
-%{_libdir}/mono/gac/gnome-sharp
-%{_libdir}/mono/gac/gtkhtml-sharp
-%{_libdir}/mono/gac/rsvg-sharp
-%{_libdir}/mono/gac/vte-sharp
+%{_prefix}/lib/mono/gac/gconf-sharp
+%{_prefix}/lib/mono/gac/gconf-sharp-peditors
+%{_prefix}/lib/mono/gac/gnome-sharp
+%{_prefix}/lib/mono/gac/gtkhtml-sharp
+%{_prefix}/lib/mono/gac/rsvg-sharp
+%{_prefix}/lib/mono/gac/vte-sharp
 
 %files gnome-devel
 %defattr(644,root,root,755)
-%{_libdir}/mono/gtk-sharp/gconf-sharp.dll
-%{_libdir}/mono/gtk-sharp/gconf-sharp-peditors.dll
-%{_libdir}/mono/gtk-sharp/gnome-sharp.dll
-%{_libdir}/mono/gtk-sharp/gtkhtml-sharp.dll
-%{_libdir}/mono/gtk-sharp/rsvg-sharp.dll
-%{_libdir}/mono/gtk-sharp/vte-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/gconf-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/gconf-sharp-peditors.dll
+%{_prefix}/lib/mono/gtk-sharp/gnome-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/gtkhtml-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/rsvg-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/vte-sharp.dll
 %{_datadir}/gapi/gnome-api.xml
 %{_datadir}/gapi/gtkhtml-api.xml
 %{_datadir}/gapi/rsvg-api.xml
@@ -299,11 +299,11 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with gda}
 %files gda
 %defattr(644,root,root,755)
-%{_libdir}/mono/gac/gda-sharp
+%{_prefix}/lib/mono/gac/gda-sharp
 
 %files gda-devel
 %defattr(644,root,root,755)
-%{_libdir}/mono/gtk-sharp/gda-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/gda-sharp.dll
 %{_datadir}/gapi/gda-api.xml
 %{_pkgconfigdir}/gda-sharp.pc
 %endif
@@ -311,11 +311,11 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with gnome} && %{with gda}
 %files gnomedb
 %defattr(644,root,root,755)
-%{_libdir}/mono/gac/gnomedb-sharp
+%{_prefix}/lib/mono/gac/gnomedb-sharp
 
 %files gnomedb-devel
 %defattr(644,root,root,755)
-%{_libdir}/mono/gtk-sharp/gnomedb-sharp.dll
+%{_prefix}/lib/mono/gtk-sharp/gnomedb-sharp.dll
 %{_datadir}/gapi/gnomedb-api.xml
 %{_pkgconfigdir}/gnomedb-sharp.pc
 %endif
