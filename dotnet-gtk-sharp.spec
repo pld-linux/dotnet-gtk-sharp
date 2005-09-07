@@ -3,21 +3,21 @@
 %bcond_without	gda	# don't build gda binding
 %bcond_without	gnome	# don't build GNOME (and dependent) bindings
 #
-%define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.6.so.* 2>/dev/null | /usr/bin/head -n 1 | /bin/awk '{ split($1,v,"."); print v[4]; }')
-%define		gtkhtml_version		%(if [ -e /usr/bin/pkg-config ]; then /usr/bin/pkg-config --modversion libgtkhtml-3.6 2>/dev/null || echo 0; else echo 0; fi)
+%define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.8.so.* 2>/dev/null | /usr/bin/head -n 1 | /bin/awk '{ split($1,v,"."); print v[4]; }')
+%define		gtkhtml_version		%(if [ -e /usr/bin/pkg-config ]; then /usr/bin/pkg-config --modversion libgtkhtml-3.8 2>/dev/null || echo 0; else echo 0; fi)
 %include	/usr/lib/rpm/macros.perl
 %include	/usr/lib/rpm/macros.mono
 Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
 Version:	1.0.10
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Libraries
 #Source0Download: http://go-mono.com/sources/
 Source0:	http://go-mono.com/sources/gtk-sharp/gtk-sharp-%{version}.tar.gz
 # Source0-md5:	e21fb3c5a39374f86ba70b926311a6d0
-Patch0:		%{name}-gtkhtml31.patch
+Patch0:		%{name}-gtkhtml.patch
 Patch1:		%{name}-destdir.patch
 Patch2:		%{name}-mint.patch
 Patch3:		%{name}-pc-libdir.patch
@@ -36,7 +36,7 @@ BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(monoautodeps)
 BuildRequires:	rpm-perlprov
 %if %{with gnome}
-BuildRequires:	gtkhtml-devel >= 3.6.2
+BuildRequires:	gtkhtml-devel >= 3.8.0
 BuildRequires:	libgnomecanvas-devel >= 2.4.0
 %{?with_gda:BuildRequires:	libgnomedb-devel >= 1.0.0}
 BuildRequires:	libgnomeprintui-devel >= 2.4.0
