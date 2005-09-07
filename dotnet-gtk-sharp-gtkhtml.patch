@@ -1,0 +1,24 @@
+diff -urN gtk-sharp-1.0.10.orig/configure.in gtk-sharp-1.0.10/configure.in
+--- gtk-sharp-1.0.10.orig/configure.in	2005-09-07 17:10:18.121615576 +0200
++++ gtk-sharp-1.0.10/configure.in	2005-09-07 17:33:59.381551224 +0200
+@@ -153,6 +153,12 @@
+ RSVG_REQUIRED_VERSION=2.0.1
+ PKG_CHECK_MODULES(RSVG_DEPENDENCIES, librsvg-2.0 >= $RSVG_REQUIRED_VERSION, enable_rsvg=yes, enable_rsvg=no)
+ 
++GTKHTML_REQUIRED_VERSION=3.8.0
++PKG_CHECK_MODULES(GTKHTML_DEPENDENCIES, libgtkhtml-3.8 >= $GTKHTML_REQUIRED_VERSION, enable_gtkhtml=yes, enable_gtkhtml=no)
++if test "x$enable_gtkhtml" = "xyes"; then
++GTKHTML_VERSION=3.8
++GTKHTML_SOVERSION=$GTKHTMLSOVERSION
++else
+ GTKHTML_REQUIRED_VERSION=3.6.0
+ PKG_CHECK_MODULES(GTKHTML_DEPENDENCIES, libgtkhtml-3.6 >= $GTKHTML_REQUIRED_VERSION, enable_gtkhtml=yes, enable_gtkhtml=no)
+ if test "x$enable_gtkhtml" = "xyes"; then
+@@ -183,6 +189,7 @@
+ fi
+ fi
+ fi
++fi
+ AC_SUBST(GTKHTML_VERSION)
+ AC_SUBST(GTKHTML_SOVERSION)
+ 
