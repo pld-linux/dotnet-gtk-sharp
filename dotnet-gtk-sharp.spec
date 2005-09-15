@@ -174,7 +174,7 @@ Wi±zania .NET dla biblioteki GNOME-DB - pliki programistyczne.
 %prep
 %setup -q -n gtk-sharp-%{version}
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
 %patch2 -p1
 #%patch3 -p1
 
