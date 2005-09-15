@@ -11,16 +11,14 @@ Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
 Version:	1.0.10
-Release:	2
+Release:	3
 License:	LGPL
 Group:		Libraries
 #Source0Download: http://go-mono.com/sources/
 Source0:	http://go-mono.com/sources/gtk-sharp/gtk-sharp-%{version}.tar.gz
 # Source0-md5:	e21fb3c5a39374f86ba70b926311a6d0
 Patch0:		%{name}-gtkhtml.patch
-Patch1:		%{name}-destdir.patch
-Patch2:		%{name}-mint.patch
-Patch3:		%{name}-pc-libdir.patch
+Patch1:		%{name}-mint.patch
 URL:		http://gtk-sharp.sf.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -174,9 +172,7 @@ Wi±zania .NET dla biblioteki GNOME-DB - pliki programistyczne.
 %prep
 %setup -q -n gtk-sharp-%{version}
 %patch0 -p1
-#%patch1 -p1
-%patch2 -p1
-#%patch3 -p1
+%patch1 -p1
 
 # workaround for variable name
 echo 'm4_pattern_allow(PKG_PATH)' > acinclude.m4
@@ -231,7 +227,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.generator ChangeLog
 %attr(755,root,root) %{_bindir}/gapi*
-%dir %{_libdir}/mono/gtk-sharp
+%dir %{_prefix}/lib/mono/gtk-sharp
 %{_prefix}/lib/mono/gtk-sharp/art-sharp.dll
 %{_prefix}/lib/mono/gtk-sharp/atk-sharp.dll
 %{_prefix}/lib/mono/gtk-sharp/gdk-sharp.dll
