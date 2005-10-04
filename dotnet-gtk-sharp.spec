@@ -11,7 +11,7 @@ Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
 Version:	1.0.10
-Release:	3
+Release:	4
 License:	LGPL
 Group:		Libraries
 #Source0Download: http://go-mono.com/sources/
