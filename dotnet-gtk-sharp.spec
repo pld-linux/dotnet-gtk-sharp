@@ -18,7 +18,7 @@ Source0:	http://go-mono.com/sources/gtk-sharp/gtk-sharp-%{version}.tar.gz
 # Source0-md5:	e21fb3c5a39374f86ba70b926311a6d0
 Patch0:		%{name}-gtkhtml.patch
 Patch1:		%{name}-mint.patch
-URL:		http://gtk-sharp.sf.net/
+URL:		http://gtk-sharp.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gawk
@@ -30,8 +30,8 @@ BuildRequires:	libxml2-devel
 BuildRequires:	mono-csharp >= 1.0.2
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(monoautodeps)
 BuildRequires:	rpm-perlprov
+BuildRequires:	rpmbuild(monoautodeps)
 %if %{with gnome}
 BuildRequires:	gtkhtml-devel >= 3.8.0
 BuildRequires:	libgnomecanvas-devel >= 2.4.0
