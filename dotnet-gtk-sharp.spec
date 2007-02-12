@@ -7,7 +7,7 @@
 %define		gtkhtml_version		%(if [ -e /usr/bin/pkg-config ]; then /usr/bin/pkg-config --modversion libgtkhtml-3.6 2>/dev/null || echo 0; else echo 0; fi)
 %include	/usr/lib/rpm/macros.perl
 Summary:	.NET language bindings for GTK+ and GNOME
-Summary(pl):	Wi±zania GTK+ oraz GNOME dla .NET
+Summary(pl.UTF-8):   WiÄ…zania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
 Version:	1.9.5
 Release:	1
@@ -50,13 +50,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 This package provides bindings for .NET to GTK+2 and GNOME2 libraries.
 
-%description -l pl
-Pakiet ten dostarcza wi±zania dla .NET do bibliotek z GTK+2 oraz
+%description -l pl.UTF-8
+Pakiet ten dostarcza wiÄ…zania dla .NET do bibliotek z GTK+2 oraz
 GNOME2.
 
 %package devel
 Summary:	Development part of GTK#
-Summary(pl):	Czê¶æ dla programistów GTK#
+Summary(pl.UTF-8):   CzÄ™Å›Ä‡ dla programistÃ³w GTK#
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Provides:	dotnet-gtk-devel
@@ -68,13 +68,13 @@ Obsoletes:	gtk-sharp-devel
 Tools (C source parser and C# code generator) and documentation for
 developing applications using GTK#.
 
-%description devel -l pl
-Narzêdzia (parser kodu C oraz generator kodu C#) i dokumentacja
-potrzebne przy tworzeniu aplikacji korzystaj±cych z GTK#.
+%description devel -l pl.UTF-8
+NarzÄ™dzia (parser kodu C oraz generator kodu C#) i dokumentacja
+potrzebne przy tworzeniu aplikacji korzystajÄ…cych z GTK#.
 
 %package static
 Summary:	Static gtk-sharp libraries
-Summary(pl):	Biblioteki statyczne gtk-sharp
+Summary(pl.UTF-8):   Biblioteki statyczne gtk-sharp
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Provides:	dotnet-gtk-static
@@ -85,12 +85,12 @@ Obsoletes:	gtk-sharp-static
 %description static
 Static gtk-sharp libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne gtk-sharp.
 
 %package gnome
 Summary:	.NET language bindings for GNOME libraries
-Summary(pl):	Wi±zania .NET dla bibliotek GNOME
+Summary(pl.UTF-8):   WiÄ…zania .NET dla bibliotek GNOME
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 %{?with_gnome:Requires:	gtkhtml = %{gtkhtml_version}}
@@ -98,12 +98,12 @@ Requires:	%{name} = %{version}-%{release}
 %description gnome
 .NET language bindings for GNOME libraries.
 
-%description gnome -l pl
-Wi±zania .NET dla bibliotek GNOME.
+%description gnome -l pl.UTF-8
+WiÄ…zania .NET dla bibliotek GNOME.
 
 %package gnome-devel
 Summary:	.NET language bindings for GNOME libraries - development files
-Summary(pl):	Wi±zania .NET dla bibliotek GNOME - pliki programistyczne
+Summary(pl.UTF-8):   WiÄ…zania .NET dla bibliotek GNOME - pliki programistyczne
 Group:		Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	%{name}-gnome = %{version}-%{release}
@@ -111,36 +111,36 @@ Requires:	%{name}-gnome = %{version}-%{release}
 %description gnome-devel
 .NET language bindings for GNOME libraries - development files.
 
-%description gnome-devel -l pl
-Wi±zania .NET dla bibliotek GNOME - pliki programistyczne.
+%description gnome-devel -l pl.UTF-8
+WiÄ…zania .NET dla bibliotek GNOME - pliki programistyczne.
 
 %package gnome-static
 Summary:	.NET language bindings for GNOME libraries - static libraries
-Summary(pl):	Wi±zania .NET dla bibliotek GNOME - static libraries
+Summary(pl.UTF-8):   WiÄ…zania .NET dla bibliotek GNOME - static libraries
 Group:		Libraries
 Requires:	%{name}-gnome-devel = %{version}-%{release}
 
 %description gnome-static
 .NET language bindings for GNOME libraries - static libraries.
 
-%description gnome-static -l pl
-Wi±zania .NET dla bibliotek GNOME - static libraries.
+%description gnome-static -l pl.UTF-8
+WiÄ…zania .NET dla bibliotek GNOME - static libraries.
 
 %package gda
 Summary:	.NET language bindings for GDA library
-Summary(pl):	Wi±zania .NET dla biblioteki GDA
+Summary(pl.UTF-8):   WiÄ…zania .NET dla biblioteki GDA
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description gda
 .NET language bindings for GDA library.
 
-%description gda -l pl
-Wi±zania .NET dla biblioteki GDA.
+%description gda -l pl.UTF-8
+WiÄ…zania .NET dla biblioteki GDA.
 
 %package gda-devel
 Summary:	.NET language bindings for GDA library - development files
-Summary(pl):	Wi±zania .NET dla biblioteki GDA - pliki programistyczne
+Summary(pl.UTF-8):   WiÄ…zania .NET dla biblioteki GDA - pliki programistyczne
 Group:		Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	%{name}-gda = %{version}-%{release}
@@ -148,12 +148,12 @@ Requires:	%{name}-gda = %{version}-%{release}
 %description gda-devel
 .NET language bindings for GDA library - development files.
 
-%description gda-devel -l pl
-Wi±zania .NET dla biblioteki GDA - pliki programistyczne.
+%description gda-devel -l pl.UTF-8
+WiÄ…zania .NET dla biblioteki GDA - pliki programistyczne.
 
 %package gnomedb
 Summary:	.NET language bindings for GNOME-DB library
-Summary(pl):	Wi±zania .NET dla biblioteki GNOME-DB
+Summary(pl.UTF-8):   WiÄ…zania .NET dla biblioteki GNOME-DB
 Group:		Libraries
 Requires:	%{name}-gda = %{version}-%{release}
 Requires:	%{name}-gnome = %{version}-%{release}
@@ -161,12 +161,12 @@ Requires:	%{name}-gnome = %{version}-%{release}
 %description gnomedb
 .NET language bindings for GNOME-DB library.
 
-%description gnomedb -l pl
-Wi±zania .NET dla biblioteki GNOME-DB.
+%description gnomedb -l pl.UTF-8
+WiÄ…zania .NET dla biblioteki GNOME-DB.
 
 %package gnomedb-devel
 Summary:	.NET language bindings for GNOME-DB library - development files
-Summary(pl):	Wi±zania .NET dla biblioteki GNOME-DB - pliki programistyczne
+Summary(pl.UTF-8):   WiÄ…zania .NET dla biblioteki GNOME-DB - pliki programistyczne
 Group:		Libraries
 Requires:	%{name}-gda-devel = %{version}-%{release}
 Requires:	%{name}-gnome-devel = %{version}-%{release}
@@ -175,8 +175,8 @@ Requires:	%{name}-gnomedb = %{version}-%{release}
 %description gnomedb-devel
 .NET language bindings for GNOME-DB library - development files.
 
-%description gnomedb-devel -l pl
-Wi±zania .NET dla biblioteki GNOME-DB - pliki programistyczne.
+%description gnomedb-devel -l pl.UTF-8
+WiÄ…zania .NET dla biblioteki GNOME-DB - pliki programistyczne.
 
 %prep
 %setup -q -n gtk-sharp-%{version}
