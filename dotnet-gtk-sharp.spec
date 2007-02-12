@@ -7,7 +7,7 @@
 %include	/usr/lib/rpm/macros.perl
 %include	/usr/lib/rpm/macros.mono
 Summary:	.NET language bindings for GTK+ and GNOME
-Summary(pl.UTF-8):   Wiązania GTK+ oraz GNOME dla .NET
+Summary(pl.UTF-8):	Wiązania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
 Version:	1.0.10
 Release:	6
@@ -55,7 +55,7 @@ GNOME2.
 
 %package devel
 Summary:	Development part of GTK#
-Summary(pl.UTF-8):   Część dla programistów GTK#
+Summary(pl.UTF-8):	Część dla programistów GTK#
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -69,7 +69,7 @@ potrzebne przy tworzeniu aplikacji korzystających z GTK#.
 
 %package static
 Summary:	Static gtk-sharp libraries
-Summary(pl.UTF-8):   Biblioteki statyczne gtk-sharp
+Summary(pl.UTF-8):	Biblioteki statyczne gtk-sharp
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
@@ -81,7 +81,7 @@ Biblioteki statyczne gtk-sharp.
 
 %package gnome
 Summary:	.NET language bindings for GNOME libraries
-Summary(pl.UTF-8):   Wiązania .NET dla bibliotek GNOME
+Summary(pl.UTF-8):	Wiązania .NET dla bibliotek GNOME
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -93,7 +93,7 @@ Wiązania .NET dla bibliotek GNOME.
 
 %package gnome-devel
 Summary:	.NET language bindings for GNOME libraries - development files
-Summary(pl.UTF-8):   Wiązania .NET dla bibliotek GNOME - pliki programistyczne
+Summary(pl.UTF-8):	Wiązania .NET dla bibliotek GNOME - pliki programistyczne
 Group:		Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	%{name}-gnome = %{version}-%{release}
@@ -106,7 +106,7 @@ Wiązania .NET dla bibliotek GNOME - pliki programistyczne.
 
 %package gnome-static
 Summary:	.NET language bindings for GNOME libraries - static libraries
-Summary(pl.UTF-8):   Wiązania .NET dla bibliotek GNOME - static libraries
+Summary(pl.UTF-8):	Wiązania .NET dla bibliotek GNOME - static libraries
 Group:		Libraries
 Requires:	%{name}-gnome-devel = %{version}-%{release}
 
@@ -118,7 +118,7 @@ Wiązania .NET dla bibliotek GNOME - static libraries.
 
 %package gda
 Summary:	.NET language bindings for GDA library
-Summary(pl.UTF-8):   Wiązania .NET dla biblioteki GDA
+Summary(pl.UTF-8):	Wiązania .NET dla biblioteki GDA
 Group:		Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -130,7 +130,7 @@ Wiązania .NET dla biblioteki GDA.
 
 %package gda-devel
 Summary:	.NET language bindings for GDA library - development files
-Summary(pl.UTF-8):   Wiązania .NET dla biblioteki GDA - pliki programistyczne
+Summary(pl.UTF-8):	Wiązania .NET dla biblioteki GDA - pliki programistyczne
 Group:		Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Requires:	%{name}-gda = %{version}-%{release}
@@ -143,7 +143,7 @@ Wiązania .NET dla biblioteki GDA - pliki programistyczne.
 
 %package gnomedb
 Summary:	.NET language bindings for GNOME-DB library
-Summary(pl.UTF-8):   Wiązania .NET dla biblioteki GNOME-DB
+Summary(pl.UTF-8):	Wiązania .NET dla biblioteki GNOME-DB
 Group:		Libraries
 Requires:	%{name}-gda = %{version}-%{release}
 Requires:	%{name}-gnome = %{version}-%{release}
@@ -156,7 +156,7 @@ Wiązania .NET dla biblioteki GNOME-DB.
 
 %package gnomedb-devel
 Summary:	.NET language bindings for GNOME-DB library - development files
-Summary(pl.UTF-8):   Wiązania .NET dla biblioteki GNOME-DB - pliki programistyczne
+Summary(pl.UTF-8):	Wiązania .NET dla biblioteki GNOME-DB - pliki programistyczne
 Group:		Libraries
 Requires:	%{name}-gda-devel = %{version}-%{release}
 Requires:	%{name}-gnome-devel = %{version}-%{release}
