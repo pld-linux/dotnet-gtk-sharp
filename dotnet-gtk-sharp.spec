@@ -3,7 +3,7 @@
 %bcond_with	gda	# don't build gda binding
 %bcond_without	gnome	# don't build GNOME (and dependent) bindings
 #
-%define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.8.so.* 2>/dev/null | /usr/bin/head -n 1 | /bin/awk '{ split($1,v,"."); print v[4]; }')
+%define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.14.so.* 2>/dev/null | /usr/bin/head -n 1 | /bin/awk '{ split($1,v,"."); print v[4]; }')
 %include	/usr/lib/rpm/macros.perl
 %include	/usr/lib/rpm/macros.mono
 Summary:	.NET language bindings for GTK+ and GNOME
