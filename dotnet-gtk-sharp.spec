@@ -44,6 +44,7 @@ BuildRequires:	librsvg-devel >= 2.4.0
 BuildRequires:	vte-devel >= 0.11.10
 %endif
 Requires:	mono >= 1.0.2
+ExclusiveArch:	%{ix86} %{x8664} alpha arm hppa ia64 mips ppc s390 s390x sparc
 ExcludeArch:	i386
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
