@@ -13,7 +13,7 @@ Version:	1.0.10
 Release:	10
 License:	LGPL
 Group:		Libraries
-Source0:	http://ftp.novell.com/pub/mono/sources/gtk-sharp/gtk-sharp-%{version}.tar.gz
+Source0:	http://download.mono-project.com/sources/gtk-sharp/gtk-sharp-%{version}.tar.gz
 # Source0-md5:	e21fb3c5a39374f86ba70b926311a6d0
 Patch0:		%{name}-gtkhtml.patch
 Patch1:		%{name}-mint.patch
