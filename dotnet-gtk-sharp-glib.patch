@@ -1,0 +1,22 @@
+--- gtk-sharp-1.0.10/glib/glue/list.c.orig	2004-06-25 20:42:19.000000000 +0200
++++ gtk-sharp-1.0.10/glib/glue/list.c	2015-01-27 18:39:09.824326539 +0100
+@@ -20,7 +20,7 @@
+  */
+ 
+ 
+-#include <glib/glist.h>
++#include <glib.h>
+ 
+ /* Forward declarations */
+ gpointer gtksharp_list_get_data (GList *l);
+--- gtk-sharp-1.0.10/glib/glue/slist.c.orig	2004-06-25 20:42:19.000000000 +0200
++++ gtk-sharp-1.0.10/glib/glue/slist.c	2015-01-27 18:39:49.917658190 +0100
+@@ -20,7 +20,7 @@
+  */
+ 
+ 
+-#include <glib/gslist.h>
++#include <glib.h>
+ 
+ /* Forward declarations */
+ gpointer gtksharp_slist_get_data (GSList *l);
