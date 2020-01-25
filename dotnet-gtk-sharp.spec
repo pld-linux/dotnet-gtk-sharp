@@ -17,8 +17,6 @@
 %if %{with gtkhtml}
 %define		gtkhtml_soversion	%(/bin/ls %{_libdir}/libgtkhtml-3.14.so.* 2>/dev/null | /usr/bin/head -n 1 | /bin/awk '{ split($1,v,"."); print v[4]; }')
 %endif
-%include	/usr/lib/rpm/macros.perl
-%include	/usr/lib/rpm/macros.mono
 Summary:	.NET language bindings for GTK+ and GNOME
 Summary(pl.UTF-8):	Wiązania GTK+ oraz GNOME dla .NET
 Name:		dotnet-gtk-sharp
