@@ -4,7 +4,7 @@
 %bcond_without	gnome	# GNOME (and dependent) bindings
 %bcond_without	gnomedb	# GNOME DB bindings [depends on gda && gnome]
 %bcond_without	gtkhtml	# GTKHTML bindings
-%bcond_without	rsvg	# RSVG bindings
+%bcond_without	librsvg	# RSVG bindings
 %bcond_without	vte	# VTE bindings [depends on gnome]
 #
 %if %{without gda} || %{without gnome}
@@ -44,7 +44,7 @@ BuildRequires:	libgnomeprintui-devel >= 2.4.0
 BuildRequires:	libgnomeui-devel >= 2.4.0
 %endif
 %{?with_gnomedb:BuildRequires:	libgnomedb-devel >= 1.0.0}
-%{?with_rsvg:BuildRequires:	librsvg-devel >= 2.4.0}
+%{?with_librsvg:BuildRequires:	librsvg-devel >= 2.4.0}
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	mono-csharp >= 1.0.2
@@ -467,7 +467,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_pkgconfigdir}/gtkhtml-sharp.pc
 %endif
 
-%if %{with rsvg}
+%if %{with librsvg}
 %files rsvg
 %defattr(644,root,root,755)
 %{_prefix}/lib/mono/gac/rsvg-sharp
