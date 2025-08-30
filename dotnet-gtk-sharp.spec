@@ -51,7 +51,7 @@ BuildRequires:	mono-csharp >= 1.0.2
 BuildRequires:	ncurses-devel
 BuildRequires:	pkgconfig
 BuildRequires:	rpm-perlprov
-BuildRequires:	rpmbuild(monoautodeps)
+BuildRequires:	rpmbuild(macros) >= 2.015
 %{?with_vte:BuildRequires:	vte0-devel >= 0.11.10}
 Requires:	mono >= 1.0.2
 ExclusiveArch:	%{ix86} %{x8664} alpha arm hppa ia64 mips ppc s390 s390x sparc sparcv9
