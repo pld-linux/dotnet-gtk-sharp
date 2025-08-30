@@ -24,13 +24,14 @@ Version:	1.0.10
 Release:	12
 License:	LGPL v2
 Group:		Libraries
-Source0:	http://download.mono-project.com/sources/gtk-sharp/gtk-sharp-%{version}.tar.gz
+Source0:	https://download.mono-project.com/sources/gtk-sharp/gtk-sharp-%{version}.tar.gz
 # Source0-md5:	e21fb3c5a39374f86ba70b926311a6d0
 Patch0:		%{name}-gtkhtml.patch
 Patch1:		%{name}-mint.patch
 Patch2:		%{name}-am.patch
 Patch3:		%{name}-glib.patch
-URL:		http://gtk-sharp.sourceforge.net/
+Patch4:		%{name}-sample.patch
+URL:		https://gtk-sharp.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gawk
@@ -307,6 +308,7 @@ Przykłady do bibliotek Gtk# 1.x.
 %patch -P1 -p1
 %patch -P2 -p1
 %patch -P3 -p1
+%patch -P4 -p1
 
 # workaround for variable name
 echo 'm4_pattern_allow(PKG_PATH)' > acinclude.m4
